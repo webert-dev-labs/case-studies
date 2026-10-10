@@ -1,0 +1,92 @@
+#!/usr/bin/env bash
+# ==========================================================
+# pre-commit — automatic maximum-protection barrier
+# Blocks the commit if it finds a forbidden file or content.
+# Enable once per clone:  git config core.hooksPath .githooks
+# ==========================================================
+
+set -u
+HOOK_DIR="$(cd "$(dirname "$0")" && pwd)"
+TERM_FILES=("$HOOK_DIR/blocked-terms.txt" "$HOOK_DIR/blocked-terms.local.txt")
+FAILS=()
+
+# Kit files are not scanned (they mention the rules on purpose)
+skip() {
+  case "$1" in
+    .githooks/*|PRINCIPLES.md|SECURITY-CHECKLIST.md|.gitignore) return 0 ;;
+  esac
+  return 1
+}
+
+mapfile -t FILES < <(git diff --cached --name-only --diff-filter=ACMR)
+
+for f in "${FILES[@]}"; do
+  skip "$f" && continue
+
+  # ---- 1. Forbidden file types (catches "git add -f" too) ----
+  case "$f" in
+    examples/*) ;;  # fictitious demo data allowed
+    *.xlsx|*.xlsm|*.xls|*.csv|*.tsv|*.parquet|*.db|*.sqlite|*.sqlite3|*.accdb|*.mdb|*.pbix|*.pbit|*.docx|*.pdf|*.pptx)
+      FAILS+=("[data/document file] $f") ; continue ;;
+  esac
+  case "$f" in
+    .env|.env.*|*.key|*.pem|*.p12|*.pfx)
+      [ "$f" != ".env.example" ] && { FAILS+=("[secret file] $f"); continue; } ;;
+  esac
+  case "$f" in
+    notes/*|drafts/*|private/*|*_private.*|*_personal.*)
+      FAILS+=("[personal file] $f") ; continue ;;
+  esac
+
+  # Large files (5 MB or more) usually mean exported data or a stray build artifact
+  SIZE="$(git cat-file -s ":$f" 2>/dev/null || echo 0)"
+  [ "$SIZE" -ge 5242880 ] && { FAILS+=("[large file >= 5 MB] $f"); continue; }
+
+  # ---- 2. Content (text files only) ----
+  CONTENT="$(git show ":$f" 2>/dev/null)" || continue
+  printf '%s' "$CONTENT" | grep -qI . 2>/dev/null || continue
+
+  # Brazilian CPF / CNPJ (formatted)
+  printf '%s' "$CONTENT" | grep -Eq '[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}' && FAILS+=("[CPF] $f")
+  printf '%s' "$CONTENT" | grep -Eq '[0-9]{2}\.[0-9]{3}\.[0-9]{3}/[0-9]{4}-[0-9]{2}' && FAILS+=("[CNPJ] $f")
+
+  # Personal or government email addresses
+  printf '%s' "$CONTENT" | grep -Eiq '[A-Za-z0-9._%+-]+@(gmail|googlemail|hotmail|outlook|live|yahoo|icloud|uol|bol|terra)\.[a-z.]+|[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.gov\.br' \
+    && FAILS+=("[personal/government email] $f")
+
+  # Private keys and known token formats
+  printf '%s' "$CONTENT" | grep -Eq 'BEGIN (RSA |EC |OPENSSH |)PRIVATE KEY|ghp_[A-Za-z0-9]{20,}|github_pat_[A-Za-z0-9_]{20,}|sk-[A-Za-z0-9_-]{20,}|AKIA[0-9A-Z]{16}' \
+    && FAILS+=("[key/token] $f")
+
+  # Absolute paths from a local machine (reveal user names and folder layout)
+  printf '%s' "$CONTENT" | grep -Eq '/home/[A-Za-z0-9._-]+/|/Users/[A-Za-z0-9._-]+/|[A-Za-z]:\\Users\\|/tmp/claude-' \
+    && FAILS+=("[local path] $f")
+
+  # Hard-coded passwords
+  printf '%s' "$CONTENT" | grep -Eiq '(senha|password|passwd|pwd)[[:space:]]*[:=][[:space:]]*["'"'"'][^"'"'"']{3,}' \
+    && FAILS+=("[hard-coded password] $f")
+
+  # Blocked terms (shared list + optional local list that is never committed)
+  for tf in "${TERM_FILES[@]}"; do
+    [ -f "$tf" ] || continue
+    while IFS= read -r term || [ -n "$term" ]; do
+      term="${term%%$'\r'}"
+      [[ -z "$term" || "$term" == \#* ]] && continue
+      printf '%s' "$CONTENT" | grep -Fiwq -- "$term" && FAILS+=("[blocked term] $f")
+    done < "$tf"
+  done
+done
+
+if [ ${#FAILS[@]} -gt 0 ]; then
+  echo ""
+  echo "=========================================================="
+  echo "  COMMIT BLOCKED — maximum protection"
+  echo "=========================================================="
+  printf '%s\n' "${FAILS[@]}" | sort -u | sed 's/^/  x /'
+  echo ""
+  echo "  Unstage with:  git restore --staged <file>"
+  echo "  (See PRINCIPLES.md)"
+  echo ""
+  exit 1
+fi
+exit 0

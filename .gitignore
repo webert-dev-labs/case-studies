@@ -1,0 +1,82 @@
+# ==========================================================
+# .gitignore — maximum protection
+# Golden rule: real data NEVER enters the repository.
+# ==========================================================
+
+# ---------- Data (any format) ----------
+data/
+dados/
+raw/
+input/
+output/
+exports/
+*.xlsx
+*.xlsm
+*.xls
+*.csv
+*.tsv
+*.parquet
+*.json.bak
+*.db
+*.sqlite
+*.sqlite3
+*.accdb
+*.mdb
+
+# Exception: FICTITIOUS demo data is allowed here
+!examples/
+!examples/**
+
+# ---------- Power BI ----------
+*.pbix
+*.pbit
+
+# ---------- Generated documents ----------
+*.docx
+*.pdf
+*.pptx
+!docs/public/**
+
+# ---------- Secrets and credentials ----------
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.p12
+*.pfx
+credentials*
+secrets*
+token*
+config.local.*
+.githooks/*.local.txt
+
+# ---------- Personal notes / drafts ----------
+notes/
+drafts/
+private/
+*_private.*
+*_personal.*
+
+# ---------- Python ----------
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.ipynb_checkpoints/
+*.egg-info/
+
+# ---------- Node.js ----------
+node_modules/
+npm-debug.log*
+dist/
+build/
+
+# ---------- OS / editors ----------
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+*.log
+~$*

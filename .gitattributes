@@ -1,0 +1,2 @@
+# Repository tooling is not part of the case studies' language statistics
+.githooks/** linguist-vendored
