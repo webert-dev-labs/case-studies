@@ -1,0 +1,501 @@
+order_id,order_date,branch,customer_id,product_id,product_name,category,quantity,unit_price,total
+ORD-00001,2025-01-02,Silver Lake,CUST-0047,PROD-003,Graphite Notebook Set,Office,1,12.5,12.5
+ORD-00002,2025-01-03,Cedar Hills,CUST-0039,PROD-002,Ergo Mesh Chair,Office,3,189.0,567.0
+ORD-00003,2025-01-03,Maple Ridge,CUST-0099,PROD-006,Ceramic Pour-Over Kit,Kitchen,4,29.9,119.6
+ORD-00004,2025-01-04,Harbor Point,CUST-0055,PROD-007,Cast Iron Skillet,Kitchen,5,44.5,222.5
+ORD-00005,2025-01-06,Cedar Hills,CUST-0113,PROD-001,Bamboo Desk Organizer,Office,2,24.9,49.8
+ORD-00006,2025-01-07,Harbor Point,CUST-0040,PROD-005,Aurora Floor Lamp,Lighting,3,84.0,252.0
+ORD-00007,2025-01-07,Harbor Point,CUST-0042,PROD-003,Graphite Notebook Set,Office,5,12.5,62.5
+ORD-00008,2025-01-08,Cedar Hills,CUST-0084,PROD-012,Smart Kettle,Appliances,5,69.9,349.5
+ORD-00009,2025-01-08,Cedar Hills,CUST-0063,PROD-011,Cordless Hand Vacuum,Appliances,2,129.0,258.0
+ORD-00010,2025-01-09,Silver Lake,CUST-0088,PROD-012,Smart Kettle,Appliances,5,69.9,349.5
+ORD-00011,2025-01-09,Cedar Hills,CUST-0046,PROD-004,Lumen LED Desk Lamp,Lighting,1,39.9,39.9
+ORD-00012,2025-01-09,Harbor Point,CUST-0004,PROD-002,Ergo Mesh Chair,Office,5,189.0,945.0
+ORD-00013,2025-01-10,Harbor Point,CUST-0022,PROD-010,Woven Storage Basket,Home Decor,1,27.4,27.4
+ORD-00014,2025-01-10,Silver Lake,CUST-0056,PROD-006,Ceramic Pour-Over Kit,Kitchen,3,29.9,89.7
+ORD-00015,2025-01-12,Silver Lake,CUST-0075,PROD-001,Bamboo Desk Organizer,Office,4,24.9,99.6
+ORD-00016,2025-01-12,Harbor Point,CUST-0075,PROD-003,Graphite Notebook Set,Office,2,12.5,25.0
+ORD-00017,2025-01-13,Maple Ridge,CUST-0042,PROD-003,Graphite Notebook Set,Office,3,12.5,37.5
+ORD-00018,2025-01-14,Maple Ridge,CUST-0096,PROD-012,Smart Kettle,Appliances,5,69.9,349.5
+ORD-00019,2025-01-14,Cedar Hills,CUST-0119,PROD-003,Graphite Notebook Set,Office,5,12.5,62.5
+ORD-00020,2025-01-16,Cedar Hills,CUST-0020,PROD-005,Aurora Floor Lamp,Lighting,1,84.0,84.0
+ORD-00021,2025-01-16,Cedar Hills,CUST-0087,PROD-006,Ceramic Pour-Over Kit,Kitchen,5,29.9,149.5
+ORD-00022,2025-01-17,Maple Ridge,CUST-0031,PROD-010,Woven Storage Basket,Home Decor,2,27.4,54.8
+ORD-00023,2025-01-17,Harbor Point,CUST-0069,PROD-012,Smart Kettle,Appliances,4,69.9,279.6
+ORD-00024,2025-01-22,Cedar Hills,CUST-0101,PROD-011,Cordless Hand Vacuum,Appliances,2,129.0,258.0
+ORD-00025,2025-01-24,Cedar Hills,CUST-0004,PROD-011,Cordless Hand Vacuum,Appliances,5,129.0,645.0
+ORD-00026,2025-01-24,Maple Ridge,CUST-0037,PROD-005,Aurora Floor Lamp,Lighting,2,84.0,168.0
+ORD-00027,2025-01-25,Maple Ridge,CUST-0028,PROD-004,Lumen LED Desk Lamp,Lighting,5,39.9,199.5
+ORD-00028,2025-01-25,Maple Ridge,CUST-0079,PROD-012,Smart Kettle,Appliances,5,69.9,349.5
+ORD-00029,2025-01-28,Harbor Point,CUST-0110,PROD-004,Lumen LED Desk Lamp,Lighting,2,39.9,79.8
+ORD-00030,2025-01-29,Silver Lake,CUST-0070,PROD-004,Lumen LED Desk Lamp,Lighting,5,39.9,199.5
+ORD-00031,2025-01-29,Maple Ridge,CUST-0078,PROD-006,Ceramic Pour-Over Kit,Kitchen,3,29.9,89.7
+ORD-00032,2025-01-30,Maple Ridge,CUST-0116,PROD-011,Cordless Hand Vacuum,Appliances,5,129.0,645.0
+ORD-00033,2025-01-31,Cedar Hills,CUST-0118,PROD-010,Woven Storage Basket,Home Decor,3,27.4,82.2
+ORD-00034,2025-01-31,Harbor Point,CUST-0083,PROD-009,Terracotta Plant Pot,Home Decor,1,18.75,18.75
+ORD-00035,2025-01-31,Harbor Point,CUST-0011,PROD-002,Ergo Mesh Chair,Office,1,189.0,189.0
+ORD-00036,2025-02-01,Maple Ridge,CUST-0110,PROD-006,Ceramic Pour-Over Kit,Kitchen,3,29.9,89.7
+ORD-00037,2025-02-01,Maple Ridge,CUST-0082,PROD-010,Woven Storage Basket,Home Decor,2,27.4,54.8
+ORD-00038,2025-02-02,Maple Ridge,CUST-0064,PROD-011,Cordless Hand Vacuum,Appliances,4,129.0,516.0
+ORD-00039,2025-02-02,Harbor Point,CUST-0069,PROD-009,Terracotta Plant Pot,Home Decor,5,18.75,93.75
+ORD-00040,2025-02-03,Harbor Point,CUST-0112,PROD-002,Ergo Mesh Chair,Office,5,189.0,945.0
+ORD-00041,2025-02-03,Maple Ridge,CUST-0011,PROD-007,Cast Iron Skillet,Kitchen,5,44.5,222.5
+ORD-00042,2025-02-03,Maple Ridge,CUST-0063,PROD-008,Linen Throw Blanket,Home Decor,4,49.0,196.0
+ORD-00043,2025-02-04,Cedar Hills,CUST-0082,PROD-008,Linen Throw Blanket,Home Decor,1,49.0,49.0
+ORD-00044,2025-02-04,Maple Ridge,CUST-0055,PROD-006,Ceramic Pour-Over Kit,Kitchen,3,29.9,89.7
+ORD-00045,2025-02-04,Cedar Hills,CUST-0015,PROD-012,Smart Kettle,Appliances,3,69.9,209.7
+ORD-00046,2025-02-05,Harbor Point,CUST-0099,PROD-009,Terracotta Plant Pot,Home Decor,2,18.75,37.5
+ORD-00047,2025-02-05,Silver Lake,CUST-0046,PROD-012,Smart Kettle,Appliances,4,69.9,279.6
+ORD-00048,2025-02-07,Maple Ridge,CUST-0074,PROD-008,Linen Throw Blanket,Home Decor,4,49.0,196.0
+ORD-00049,2025-02-08,Maple Ridge,CUST-0092,PROD-001,Bamboo Desk Organizer,Office,4,24.9,99.6
+ORD-00050,2025-02-08,Cedar Hills,CUST-0023,PROD-001,Bamboo Desk Organizer,Office,3,24.9,74.7
+ORD-00051,2025-02-09,Cedar Hills,CUST-0116,PROD-007,Cast Iron Skillet,Kitchen,1,44.5,44.5
+ORD-00052,2025-02-09,Maple Ridge,CUST-0092,PROD-001,Bamboo Desk Organizer,Office,5,24.9,124.5
+ORD-00053,2025-02-09,Cedar Hills,CUST-0096,PROD-002,Ergo Mesh Chair,Office,3,189.0,567.0
+ORD-00054,2025-02-11,Silver Lake,CUST-0120,PROD-009,Terracotta Plant Pot,Home Decor,5,18.75,93.75
+ORD-00055,2025-02-12,Harbor Point,CUST-0101,PROD-010,Woven Storage Basket,Home Decor,1,27.4,27.4
+ORD-00056,2025-02-13,Maple Ridge,CUST-0018,PROD-011,Cordless Hand Vacuum,Appliances,3,129.0,387.0
+ORD-00057,2025-02-13,Maple Ridge,CUST-0081,PROD-007,Cast Iron Skillet,Kitchen,1,44.5,44.5
+ORD-00058,2025-02-13,Harbor Point,CUST-0067,PROD-010,Woven Storage Basket,Home Decor,2,27.4,54.8
+ORD-00059,2025-02-14,Harbor Point,CUST-0022,PROD-011,Cordless Hand Vacuum,Appliances,1,129.0,129.0
+ORD-00060,2025-02-14,Silver Lake,CUST-0059,PROD-004,Lumen LED Desk Lamp,Lighting,5,39.9,199.5
+ORD-00061,2025-02-15,Harbor Point,CUST-0020,PROD-007,Cast Iron Skillet,Kitchen,2,44.5,89.0
+ORD-00062,2025-02-16,Harbor Point,CUST-0006,PROD-009,Terracotta Plant Pot,Home Decor,3,18.75,56.25
+ORD-00063,2025-02-16,Harbor Point,CUST-0102,PROD-006,Ceramic Pour-Over Kit,Kitchen,1,29.9,29.9
+ORD-00064,2025-02-16,Cedar Hills,CUST-0011,PROD-012,Smart Kettle,Appliances,4,69.9,279.6
+ORD-00065,2025-02-17,Cedar Hills,CUST-0098,PROD-005,Aurora Floor Lamp,Lighting,2,84.0,168.0
+ORD-00066,2025-02-17,Cedar Hills,CUST-0115,PROD-004,Lumen LED Desk Lamp,Lighting,3,39.9,119.7
+ORD-00067,2025-02-18,Harbor Point,CUST-0094,PROD-008,Linen Throw Blanket,Home Decor,2,49.0,98.0
+ORD-00068,2025-02-18,Harbor Point,CUST-0105,PROD-001,Bamboo Desk Organizer,Office,4,24.9,99.6
+ORD-00069,2025-02-21,Harbor Point,CUST-0085,PROD-003,Graphite Notebook Set,Office,2,12.5,25.0
+ORD-00070,2025-02-21,Maple Ridge,CUST-0061,PROD-007,Cast Iron Skillet,Kitchen,1,44.5,44.5
+ORD-00071,2025-02-21,Maple Ridge,CUST-0052,PROD-003,Graphite Notebook Set,Office,1,12.5,12.5
+ORD-00072,2025-02-21,Harbor Point,CUST-0006,PROD-002,Ergo Mesh Chair,Office,5,189.0,945.0
+ORD-00073,2025-02-21,Silver Lake,CUST-0074,PROD-001,Bamboo Desk Organizer,Office,4,24.9,99.6
+ORD-00074,2025-02-21,Maple Ridge,CUST-0119,PROD-003,Graphite Notebook Set,Office,3,12.5,37.5
+ORD-00075,2025-02-22,Maple Ridge,CUST-0039,PROD-009,Terracotta Plant Pot,Home Decor,5,18.75,93.75
+ORD-00076,2025-02-22,Harbor Point,CUST-0020,PROD-009,Terracotta Plant Pot,Home Decor,5,18.75,93.75
+ORD-00077,2025-02-24,Maple Ridge,CUST-0064,PROD-011,Cordless Hand Vacuum,Appliances,1,129.0,129.0
+ORD-00078,2025-02-25,Maple Ridge,CUST-0002,PROD-003,Graphite Notebook Set,Office,1,12.5,12.5
+ORD-00079,2025-02-25,Harbor Point,CUST-0044,PROD-004,Lumen LED Desk Lamp,Lighting,2,39.9,79.8
+ORD-00080,2025-02-25,Silver Lake,CUST-0045,PROD-005,Aurora Floor Lamp,Lighting,3,84.0,252.0
+ORD-00081,2025-02-25,Silver Lake,CUST-0054,PROD-011,Cordless Hand Vacuum,Appliances,1,129.0,129.0
+ORD-00082,2025-02-26,Maple Ridge,CUST-0093,PROD-009,Terracotta Plant Pot,Home Decor,5,18.75,93.75
+ORD-00083,2025-02-28,Maple Ridge,CUST-0062,PROD-004,Lumen LED Desk Lamp,Lighting,2,39.9,79.8
+ORD-00084,2025-02-28,Maple Ridge,CUST-0051,PROD-006,Ceramic Pour-Over Kit,Kitchen,5,29.9,149.5
+ORD-00085,2025-02-28,Cedar Hills,CUST-0024,PROD-011,Cordless Hand Vacuum,Appliances,2,129.0,258.0
+ORD-00086,2025-03-02,Maple Ridge,CUST-0058,PROD-004,Lumen LED Desk Lamp,Lighting,2,39.9,79.8
+ORD-00087,2025-03-02,Maple Ridge,CUST-0082,PROD-011,Cordless Hand Vacuum,Appliances,5,129.0,645.0
+ORD-00088,2025-03-02,Harbor Point,CUST-0052,PROD-004,Lumen LED Desk Lamp,Lighting,2,39.9,79.8
+ORD-00089,2025-03-02,Maple Ridge,CUST-0020,PROD-007,Cast Iron Skillet,Kitchen,2,44.5,89.0
+ORD-00090,2025-03-02,Cedar Hills,CUST-0045,PROD-004,Lumen LED Desk Lamp,Lighting,2,39.9,79.8
+ORD-00091,2025-03-04,Maple Ridge,CUST-0050,PROD-012,Smart Kettle,Appliances,3,69.9,209.7
+ORD-00092,2025-03-05,Cedar Hills,CUST-0069,PROD-001,Bamboo Desk Organizer,Office,2,24.9,49.8
+ORD-00093,2025-03-05,Harbor Point,CUST-0009,PROD-007,Cast Iron Skillet,Kitchen,1,44.5,44.5
+ORD-00094,2025-03-06,Cedar Hills,CUST-0013,PROD-012,Smart Kettle,Appliances,3,69.9,209.7
+ORD-00095,2025-03-07,Maple Ridge,CUST-0112,PROD-007,Cast Iron Skillet,Kitchen,2,44.5,89.0
+ORD-00096,2025-03-07,Silver Lake,CUST-0063,PROD-003,Graphite Notebook Set,Office,2,12.5,25.0
+ORD-00097,2025-03-07,Maple Ridge,CUST-0030,PROD-003,Graphite Notebook Set,Office,3,12.5,37.5
+ORD-00098,2025-03-08,Harbor Point,CUST-0023,PROD-008,Linen Throw Blanket,Home Decor,2,49.0,98.0
+ORD-00099,2025-03-08,Maple Ridge,CUST-0101,PROD-001,Bamboo Desk Organizer,Office,4,24.9,99.6
+ORD-00100,2025-03-10,Silver Lake,CUST-0076,PROD-003,Graphite Notebook Set,Office,3,12.5,37.5
+ORD-00101,2025-03-11,Cedar Hills,CUST-0044,PROD-008,Linen Throw Blanket,Home Decor,5,49.0,245.0
+ORD-00102,2025-03-13,Harbor Point,CUST-0103,PROD-004,Lumen LED Desk Lamp,Lighting,2,39.9,79.8
+ORD-00103,2025-03-13,Cedar Hills,CUST-0105,PROD-004,Lumen LED Desk Lamp,Lighting,4,39.9,159.6
+ORD-00104,2025-03-14,Harbor Point,CUST-0089,PROD-009,Terracotta Plant Pot,Home Decor,2,18.75,37.5
+ORD-00105,2025-03-14,Cedar Hills,CUST-0016,PROD-007,Cast Iron Skillet,Kitchen,1,44.5,44.5
+ORD-00106,2025-03-15,Harbor Point,CUST-0104,PROD-010,Woven Storage Basket,Home Decor,3,27.4,82.2
+ORD-00107,2025-03-15,Harbor Point,CUST-0088,PROD-006,Ceramic Pour-Over Kit,Kitchen,2,29.9,59.8
+ORD-00108,2025-03-15,Harbor Point,CUST-0027,PROD-001,Bamboo Desk Organizer,Office,2,24.9,49.8
+ORD-00109,2025-03-20,Harbor Point,CUST-0007,PROD-011,Cordless Hand Vacuum,Appliances,3,129.0,387.0
+ORD-00110,2025-03-23,Silver Lake,CUST-0102,PROD-012,Smart Kettle,Appliances,5,69.9,349.5
+ORD-00111,2025-03-24,Harbor Point,CUST-0002,PROD-003,Graphite Notebook Set,Office,5,12.5,62.5
+ORD-00112,2025-03-24,Cedar Hills,CUST-0096,PROD-006,Ceramic Pour-Over Kit,Kitchen,3,29.9,89.7
+ORD-00113,2025-03-25,Silver Lake,CUST-0107,PROD-001,Bamboo Desk Organizer,Office,1,24.9,24.9
+ORD-00114,2025-03-26,Cedar Hills,CUST-0109,PROD-010,Woven Storage Basket,Home Decor,5,27.4,137.0
+ORD-00115,2025-03-26,Maple Ridge,CUST-0096,PROD-005,Aurora Floor Lamp,Lighting,4,84.0,336.0
+ORD-00116,2025-03-27,Harbor Point,CUST-0080,PROD-012,Smart Kettle,Appliances,4,69.9,279.6
+ORD-00117,2025-03-28,Silver Lake,CUST-0013,PROD-005,Aurora Floor Lamp,Lighting,2,84.0,168.0
+ORD-00118,2025-03-29,Silver Lake,CUST-0080,PROD-012,Smart Kettle,Appliances,3,69.9,209.7
+ORD-00119,2025-03-29,Maple Ridge,CUST-0113,PROD-006,Ceramic Pour-Over Kit,Kitchen,4,29.9,119.6
+ORD-00120,2025-03-29,Cedar Hills,CUST-0102,PROD-005,Aurora Floor Lamp,Lighting,1,84.0,84.0
+ORD-00121,2025-03-31,Harbor Point,CUST-0015,PROD-007,Cast Iron Skillet,Kitchen,4,44.5,178.0
+ORD-00122,2025-03-31,Maple Ridge,CUST-0107,PROD-003,Graphite Notebook Set,Office,1,12.5,12.5
+ORD-00123,2025-04-02,Harbor Point,CUST-0007,PROD-003,Graphite Notebook Set,Office,5,12.5,62.5
+ORD-00124,2025-04-04,Harbor Point,CUST-0075,PROD-004,Lumen LED Desk Lamp,Lighting,3,39.9,119.7
+ORD-00125,2025-04-06,Cedar Hills,CUST-0042,PROD-009,Terracotta Plant Pot,Home Decor,1,18.75,18.75
+ORD-00126,2025-04-06,Maple Ridge,CUST-0013,PROD-008,Linen Throw Blanket,Home Decor,5,49.0,245.0
+ORD-00127,2025-04-07,Maple Ridge,CUST-0030,PROD-003,Graphite Notebook Set,Office,4,12.5,50.0
+ORD-00128,2025-04-08,Harbor Point,CUST-0104,PROD-010,Woven Storage Basket,Home Decor,2,27.4,54.8
+ORD-00129,2025-04-08,Cedar Hills,CUST-0106,PROD-004,Lumen LED Desk Lamp,Lighting,1,39.9,39.9
+ORD-00130,2025-04-10,Maple Ridge,CUST-0106,PROD-005,Aurora Floor Lamp,Lighting,3,84.0,252.0
+ORD-00131,2025-04-11,Cedar Hills,CUST-0054,PROD-012,Smart Kettle,Appliances,2,69.9,139.8
+ORD-00132,2025-04-11,Maple Ridge,CUST-0006,PROD-010,Woven Storage Basket,Home Decor,2,27.4,54.8
+ORD-00133,2025-04-12,Cedar Hills,CUST-0085,PROD-012,Smart Kettle,Appliances,3,69.9,209.7
+ORD-00134,2025-04-12,Silver Lake,CUST-0094,PROD-004,Lumen LED Desk Lamp,Lighting,5,39.9,199.5
+ORD-00135,2025-04-12,Harbor Point,CUST-0001,PROD-012,Smart Kettle,Appliances,3,69.9,209.7
+ORD-00136,2025-04-13,Silver Lake,CUST-0003,PROD-004,Lumen LED Desk Lamp,Lighting,5,39.9,199.5
+ORD-00137,2025-04-13,Maple Ridge,CUST-0060,PROD-001,Bamboo Desk Organizer,Office,5,24.9,124.5
+ORD-00138,2025-04-13,Maple Ridge,CUST-0090,PROD-004,Lumen LED Desk Lamp,Lighting,4,39.9,159.6
+ORD-00139,2025-04-14,Maple Ridge,CUST-0058,PROD-003,Graphite Notebook Set,Office,4,12.5,50.0
+ORD-00140,2025-04-15,Harbor Point,CUST-0039,PROD-003,Graphite Notebook Set,Office,3,12.5,37.5
+ORD-00141,2025-04-16,Maple Ridge,CUST-0020,PROD-010,Woven Storage Basket,Home Decor,1,27.4,27.4
+ORD-00142,2025-04-16,Harbor Point,CUST-0079,PROD-008,Linen Throw Blanket,Home Decor,4,49.0,196.0
+ORD-00143,2025-04-16,Cedar Hills,CUST-0091,PROD-006,Ceramic Pour-Over Kit,Kitchen,4,29.9,119.6
+ORD-00144,2025-04-17,Cedar Hills,CUST-0012,PROD-005,Aurora Floor Lamp,Lighting,4,84.0,336.0
+ORD-00145,2025-04-18,Harbor Point,CUST-0072,PROD-007,Cast Iron Skillet,Kitchen,2,44.5,89.0
+ORD-00146,2025-04-18,Silver Lake,CUST-0041,PROD-004,Lumen LED Desk Lamp,Lighting,4,39.9,159.6
+ORD-00147,2025-04-19,Harbor Point,CUST-0055,PROD-004,Lumen LED Desk Lamp,Lighting,5,39.9,199.5
+ORD-00148,2025-04-20,Harbor Point,CUST-0002,PROD-001,Bamboo Desk Organizer,Office,2,24.9,49.8
+ORD-00149,2025-04-20,Silver Lake,CUST-0055,PROD-009,Terracotta Plant Pot,Home Decor,1,18.75,18.75
+ORD-00150,2025-04-20,Silver Lake,CUST-0031,PROD-001,Bamboo Desk Organizer,Office,5,24.9,124.5
+ORD-00151,2025-04-21,Silver Lake,CUST-0065,PROD-009,Terracotta Plant Pot,Home Decor,1,18.75,18.75
+ORD-00152,2025-04-21,Maple Ridge,CUST-0012,PROD-008,Linen Throw Blanket,Home Decor,5,49.0,245.0
+ORD-00153,2025-04-21,Harbor Point,CUST-0002,PROD-004,Lumen LED Desk Lamp,Lighting,2,39.9,79.8
+ORD-00154,2025-04-22,Harbor Point,CUST-0094,PROD-008,Linen Throw Blanket,Home Decor,4,49.0,196.0
+ORD-00155,2025-04-23,Cedar Hills,CUST-0001,PROD-006,Ceramic Pour-Over Kit,Kitchen,3,29.9,89.7
+ORD-00156,2025-04-24,Harbor Point,CUST-0071,PROD-004,Lumen LED Desk Lamp,Lighting,2,39.9,79.8
+ORD-00157,2025-04-24,Harbor Point,CUST-0041,PROD-009,Terracotta Plant Pot,Home Decor,2,18.75,37.5
+ORD-00158,2025-04-25,Maple Ridge,CUST-0010,PROD-008,Linen Throw Blanket,Home Decor,2,49.0,98.0
+ORD-00159,2025-04-25,Maple Ridge,CUST-0019,PROD-010,Woven Storage Basket,Home Decor,3,27.4,82.2
+ORD-00160,2025-04-26,Cedar Hills,CUST-0011,PROD-004,Lumen LED Desk Lamp,Lighting,4,39.9,159.6
+ORD-00161,2025-04-26,Harbor Point,CUST-0037,PROD-010,Woven Storage Basket,Home Decor,5,27.4,137.0
+ORD-00162,2025-04-26,Harbor Point,CUST-0092,PROD-003,Graphite Notebook Set,Office,1,12.5,12.5
+ORD-00163,2025-04-27,Maple Ridge,CUST-0087,PROD-009,Terracotta Plant Pot,Home Decor,5,18.75,93.75
+ORD-00164,2025-04-28,Harbor Point,CUST-0091,PROD-004,Lumen LED Desk Lamp,Lighting,2,39.9,79.8
+ORD-00165,2025-04-28,Harbor Point,CUST-0038,PROD-002,Ergo Mesh Chair,Office,3,189.0,567.0
+ORD-00166,2025-04-29,Harbor Point,CUST-0055,PROD-007,Cast Iron Skillet,Kitchen,3,44.5,133.5
+ORD-00167,2025-05-01,Maple Ridge,CUST-0066,PROD-006,Ceramic Pour-Over Kit,Kitchen,2,29.9,59.8
+ORD-00168,2025-05-01,Cedar Hills,CUST-0048,PROD-007,Cast Iron Skillet,Kitchen,4,44.5,178.0
+ORD-00169,2025-05-02,Silver Lake,CUST-0034,PROD-009,Terracotta Plant Pot,Home Decor,3,18.75,56.25
+ORD-00170,2025-05-02,Harbor Point,CUST-0100,PROD-003,Graphite Notebook Set,Office,4,12.5,50.0
+ORD-00171,2025-05-03,Harbor Point,CUST-0064,PROD-012,Smart Kettle,Appliances,1,69.9,69.9
+ORD-00172,2025-05-03,Maple Ridge,CUST-0006,PROD-001,Bamboo Desk Organizer,Office,2,24.9,49.8
+ORD-00173,2025-05-04,Harbor Point,CUST-0044,PROD-007,Cast Iron Skillet,Kitchen,1,44.5,44.5
+ORD-00174,2025-05-06,Silver Lake,CUST-0057,PROD-004,Lumen LED Desk Lamp,Lighting,1,39.9,39.9
+ORD-00175,2025-05-07,Harbor Point,CUST-0022,PROD-007,Cast Iron Skillet,Kitchen,1,44.5,44.5
+ORD-00176,2025-05-07,Maple Ridge,CUST-0057,PROD-009,Terracotta Plant Pot,Home Decor,5,18.75,93.75
+ORD-00177,2025-05-10,Harbor Point,CUST-0069,PROD-009,Terracotta Plant Pot,Home Decor,2,18.75,37.5
+ORD-00178,2025-05-13,Cedar Hills,CUST-0064,PROD-005,Aurora Floor Lamp,Lighting,2,84.0,168.0
+ORD-00179,2025-05-13,Harbor Point,CUST-0048,PROD-003,Graphite Notebook Set,Office,3,12.5,37.5
+ORD-00180,2025-05-13,Cedar Hills,CUST-0007,PROD-004,Lumen LED Desk Lamp,Lighting,4,39.9,159.6
+ORD-00181,2025-05-14,Harbor Point,CUST-0030,PROD-002,Ergo Mesh Chair,Office,4,189.0,756.0
+ORD-00182,2025-05-14,Harbor Point,CUST-0032,PROD-005,Aurora Floor Lamp,Lighting,5,84.0,420.0
+ORD-00183,2025-05-15,Harbor Point,CUST-0106,PROD-008,Linen Throw Blanket,Home Decor,2,49.0,98.0
+ORD-00184,2025-05-16,Harbor Point,CUST-0086,PROD-008,Linen Throw Blanket,Home Decor,1,49.0,49.0
+ORD-00185,2025-05-16,Maple Ridge,CUST-0073,PROD-011,Cordless Hand Vacuum,Appliances,4,129.0,516.0
+ORD-00186,2025-05-16,Cedar Hills,CUST-0115,PROD-011,Cordless Hand Vacuum,Appliances,4,129.0,516.0
+ORD-00187,2025-05-17,Cedar Hills,CUST-0113,PROD-005,Aurora Floor Lamp,Lighting,2,84.0,168.0
+ORD-00188,2025-05-17,Cedar Hills,CUST-0120,PROD-011,Cordless Hand Vacuum,Appliances,2,129.0,258.0
+ORD-00189,2025-05-19,Cedar Hills,CUST-0088,PROD-012,Smart Kettle,Appliances,5,69.9,349.5
+ORD-00190,2025-05-20,Cedar Hills,CUST-0049,PROD-004,Lumen LED Desk Lamp,Lighting,3,39.9,119.7
+ORD-00191,2025-05-22,Cedar Hills,CUST-0003,PROD-003,Graphite Notebook Set,Office,1,12.5,12.5
+ORD-00192,2025-05-26,Cedar Hills,CUST-0025,PROD-001,Bamboo Desk Organizer,Office,1,24.9,24.9
+ORD-00193,2025-05-27,Harbor Point,CUST-0039,PROD-008,Linen Throw Blanket,Home Decor,3,49.0,147.0
+ORD-00194,2025-05-29,Silver Lake,CUST-0067,PROD-011,Cordless Hand Vacuum,Appliances,3,129.0,387.0
+ORD-00195,2025-05-30,Cedar Hills,CUST-0067,PROD-008,Linen Throw Blanket,Home Decor,3,49.0,147.0
+ORD-00196,2025-05-30,Maple Ridge,CUST-0072,PROD-008,Linen Throw Blanket,Home Decor,3,49.0,147.0
+ORD-00197,2025-05-30,Harbor Point,CUST-0023,PROD-005,Aurora Floor Lamp,Lighting,1,84.0,84.0
+ORD-00198,2025-05-30,Silver Lake,CUST-0073,PROD-001,Bamboo Desk Organizer,Office,5,24.9,124.5
+ORD-00199,2025-05-31,Cedar Hills,CUST-0001,PROD-003,Graphite Notebook Set,Office,4,12.5,50.0
+ORD-00200,2025-06-01,Maple Ridge,CUST-0046,PROD-003,Graphite Notebook Set,Office,5,12.5,62.5
+ORD-00201,2025-06-02,Harbor Point,CUST-0064,PROD-012,Smart Kettle,Appliances,2,69.9,139.8
+ORD-00202,2025-06-02,Harbor Point,CUST-0093,PROD-003,Graphite Notebook Set,Office,3,12.5,37.5
+ORD-00203,2025-06-02,Cedar Hills,CUST-0044,PROD-005,Aurora Floor Lamp,Lighting,3,84.0,252.0
+ORD-00204,2025-06-02,Silver Lake,CUST-0099,PROD-008,Linen Throw Blanket,Home Decor,1,49.0,49.0
+ORD-00205,2025-06-05,Maple Ridge,CUST-0034,PROD-012,Smart Kettle,Appliances,4,69.9,279.6
+ORD-00206,2025-06-07,Harbor Point,CUST-0012,PROD-004,Lumen LED Desk Lamp,Lighting,1,39.9,39.9
+ORD-00207,2025-06-07,Harbor Point,CUST-0082,PROD-005,Aurora Floor Lamp,Lighting,3,84.0,252.0
+ORD-00208,2025-06-08,Harbor Point,CUST-0072,PROD-010,Woven Storage Basket,Home Decor,1,27.4,27.4
+ORD-00209,2025-06-08,Harbor Point,CUST-0089,PROD-011,Cordless Hand Vacuum,Appliances,1,129.0,129.0
+ORD-00210,2025-06-08,Silver Lake,CUST-0019,PROD-009,Terracotta Plant Pot,Home Decor,5,18.75,93.75
+ORD-00211,2025-06-08,Maple Ridge,CUST-0020,PROD-006,Ceramic Pour-Over Kit,Kitchen,1,29.9,29.9
+ORD-00212,2025-06-08,Silver Lake,CUST-0036,PROD-005,Aurora Floor Lamp,Lighting,4,84.0,336.0
+ORD-00213,2025-06-08,Maple Ridge,CUST-0018,PROD-006,Ceramic Pour-Over Kit,Kitchen,5,29.9,149.5
+ORD-00214,2025-06-09,Harbor Point,CUST-0026,PROD-002,Ergo Mesh Chair,Office,3,189.0,567.0
+ORD-00215,2025-06-09,Silver Lake,CUST-0033,PROD-005,Aurora Floor Lamp,Lighting,5,84.0,420.0
+ORD-00216,2025-06-10,Harbor Point,CUST-0039,PROD-006,Ceramic Pour-Over Kit,Kitchen,1,29.9,29.9
+ORD-00217,2025-06-10,Maple Ridge,CUST-0032,PROD-010,Woven Storage Basket,Home Decor,5,27.4,137.0
+ORD-00218,2025-06-10,Harbor Point,CUST-0023,PROD-006,Ceramic Pour-Over Kit,Kitchen,3,29.9,89.7
+ORD-00219,2025-06-11,Silver Lake,CUST-0111,PROD-005,Aurora Floor Lamp,Lighting,3,84.0,252.0
+ORD-00220,2025-06-11,Harbor Point,CUST-0088,PROD-009,Terracotta Plant Pot,Home Decor,5,18.75,93.75
+ORD-00221,2025-06-12,Silver Lake,CUST-0083,PROD-006,Ceramic Pour-Over Kit,Kitchen,4,29.9,119.6
+ORD-00222,2025-06-12,Harbor Point,CUST-0063,PROD-004,Lumen LED Desk Lamp,Lighting,3,39.9,119.7
+ORD-00223,2025-06-13,Harbor Point,CUST-0050,PROD-004,Lumen LED Desk Lamp,Lighting,3,39.9,119.7
+ORD-00224,2025-06-13,Harbor Point,CUST-0061,PROD-009,Terracotta Plant Pot,Home Decor,2,18.75,37.5
+ORD-00225,2025-06-14,Harbor Point,CUST-0056,PROD-006,Ceramic Pour-Over Kit,Kitchen,5,29.9,149.5
+ORD-00226,2025-06-14,Harbor Point,CUST-0011,PROD-007,Cast Iron Skillet,Kitchen,5,44.5,222.5
+ORD-00227,2025-06-14,Harbor Point,CUST-0089,PROD-002,Ergo Mesh Chair,Office,3,189.0,567.0
+ORD-00228,2025-06-16,Harbor Point,CUST-0111,PROD-006,Ceramic Pour-Over Kit,Kitchen,1,29.9,29.9
+ORD-00229,2025-06-16,Cedar Hills,CUST-0090,PROD-002,Ergo Mesh Chair,Office,4,189.0,756.0
+ORD-00230,2025-06-17,Harbor Point,CUST-0084,PROD-011,Cordless Hand Vacuum,Appliances,3,129.0,387.0
+ORD-00231,2025-06-17,Silver Lake,CUST-0050,PROD-007,Cast Iron Skillet,Kitchen,2,44.5,89.0
+ORD-00232,2025-06-18,Harbor Point,CUST-0089,PROD-005,Aurora Floor Lamp,Lighting,4,84.0,336.0
+ORD-00233,2025-06-18,Maple Ridge,CUST-0119,PROD-010,Woven Storage Basket,Home Decor,3,27.4,82.2
+ORD-00234,2025-06-18,Harbor Point,CUST-0077,PROD-005,Aurora Floor Lamp,Lighting,4,84.0,336.0
+ORD-00235,2025-06-19,Cedar Hills,CUST-0094,PROD-008,Linen Throw Blanket,Home Decor,5,49.0,245.0
+ORD-00236,2025-06-20,Cedar Hills,CUST-0075,PROD-012,Smart Kettle,Appliances,1,69.9,69.9
+ORD-00237,2025-06-20,Silver Lake,CUST-0040,PROD-003,Graphite Notebook Set,Office,3,12.5,37.5
+ORD-00238,2025-06-20,Silver Lake,CUST-0041,PROD-003,Graphite Notebook Set,Office,5,12.5,62.5
+ORD-00239,2025-06-21,Silver Lake,CUST-0119,PROD-006,Ceramic Pour-Over Kit,Kitchen,5,29.9,149.5
+ORD-00240,2025-06-21,Harbor Point,CUST-0002,PROD-008,Linen Throw Blanket,Home Decor,5,49.0,245.0
+ORD-00241,2025-06-21,Maple Ridge,CUST-0014,PROD-005,Aurora Floor Lamp,Lighting,2,84.0,168.0
+ORD-00242,2025-06-22,Cedar Hills,CUST-0029,PROD-004,Lumen LED Desk Lamp,Lighting,3,39.9,119.7
+ORD-00243,2025-06-22,Maple Ridge,CUST-0091,PROD-005,Aurora Floor Lamp,Lighting,5,84.0,420.0
+ORD-00244,2025-06-23,Maple Ridge,CUST-0039,PROD-005,Aurora Floor Lamp,Lighting,2,84.0,168.0
+ORD-00245,2025-06-26,Cedar Hills,CUST-0016,PROD-006,Ceramic Pour-Over Kit,Kitchen,2,29.9,59.8
+ORD-00246,2025-06-27,Maple Ridge,CUST-0041,PROD-005,Aurora Floor Lamp,Lighting,5,84.0,420.0
+ORD-00247,2025-06-28,Harbor Point,CUST-0004,PROD-003,Graphite Notebook Set,Office,1,12.5,12.5
+ORD-00248,2025-06-29,Harbor Point,CUST-0104,PROD-008,Linen Throw Blanket,Home Decor,3,49.0,147.0
+ORD-00249,2025-06-29,Maple Ridge,CUST-0115,PROD-010,Woven Storage Basket,Home Decor,5,27.4,137.0
+ORD-00250,2025-06-30,Harbor Point,CUST-0044,PROD-008,Linen Throw Blanket,Home Decor,3,49.0,147.0
+ORD-00251,2025-06-30,Maple Ridge,CUST-0082,PROD-001,Bamboo Desk Organizer,Office,2,24.9,49.8
+ORD-00252,2025-06-30,Silver Lake,CUST-0107,PROD-007,Cast Iron Skillet,Kitchen,1,44.5,44.5
+ORD-00253,2025-07-01,Silver Lake,CUST-0055,PROD-009,Terracotta Plant Pot,Home Decor,5,18.75,93.75
+ORD-00254,2025-07-01,Maple Ridge,CUST-0005,PROD-008,Linen Throw Blanket,Home Decor,2,49.0,98.0
+ORD-00255,2025-07-02,Harbor Point,CUST-0104,PROD-004,Lumen LED Desk Lamp,Lighting,3,39.9,119.7
+ORD-00256,2025-07-02,Maple Ridge,CUST-0062,PROD-006,Ceramic Pour-Over Kit,Kitchen,2,29.9,59.8
+ORD-00257,2025-07-02,Silver Lake,CUST-0040,PROD-005,Aurora Floor Lamp,Lighting,4,84.0,336.0
+ORD-00258,2025-07-02,Harbor Point,CUST-0030,PROD-010,Woven Storage Basket,Home Decor,5,27.4,137.0
+ORD-00259,2025-07-02,Harbor Point,CUST-0009,PROD-002,Ergo Mesh Chair,Office,5,189.0,945.0
+ORD-00260,2025-07-04,Maple Ridge,CUST-0008,PROD-009,Terracotta Plant Pot,Home Decor,1,18.75,18.75
+ORD-00261,2025-07-04,Harbor Point,CUST-0101,PROD-010,Woven Storage Basket,Home Decor,4,27.4,109.6
+ORD-00262,2025-07-04,Cedar Hills,CUST-0064,PROD-006,Ceramic Pour-Over Kit,Kitchen,2,29.9,59.8
+ORD-00263,2025-07-05,Silver Lake,CUST-0046,PROD-008,Linen Throw Blanket,Home Decor,5,49.0,245.0
+ORD-00264,2025-07-07,Harbor Point,CUST-0058,PROD-005,Aurora Floor Lamp,Lighting,4,84.0,336.0
+ORD-00265,2025-07-07,Cedar Hills,CUST-0102,PROD-009,Terracotta Plant Pot,Home Decor,3,18.75,56.25
+ORD-00266,2025-07-09,Maple Ridge,CUST-0049,PROD-002,Ergo Mesh Chair,Office,1,189.0,189.0
+ORD-00267,2025-07-10,Cedar Hills,CUST-0025,PROD-010,Woven Storage Basket,Home Decor,5,27.4,137.0
+ORD-00268,2025-07-10,Maple Ridge,CUST-0001,PROD-010,Woven Storage Basket,Home Decor,3,27.4,82.2
+ORD-00269,2025-07-12,Harbor Point,CUST-0041,PROD-006,Ceramic Pour-Over Kit,Kitchen,1,29.9,29.9
+ORD-00270,2025-07-13,Harbor Point,CUST-0026,PROD-001,Bamboo Desk Organizer,Office,4,24.9,99.6
+ORD-00271,2025-07-14,Cedar Hills,CUST-0010,PROD-007,Cast Iron Skillet,Kitchen,1,44.5,44.5
+ORD-00272,2025-07-17,Harbor Point,CUST-0057,PROD-012,Smart Kettle,Appliances,1,69.9,69.9
+ORD-00273,2025-07-18,Harbor Point,CUST-0058,PROD-009,Terracotta Plant Pot,Home Decor,1,18.75,18.75
+ORD-00274,2025-07-18,Harbor Point,CUST-0016,PROD-011,Cordless Hand Vacuum,Appliances,1,129.0,129.0
+ORD-00275,2025-07-19,Silver Lake,CUST-0003,PROD-007,Cast Iron Skillet,Kitchen,1,44.5,44.5
+ORD-00276,2025-07-19,Cedar Hills,CUST-0108,PROD-009,Terracotta Plant Pot,Home Decor,4,18.75,75.0
+ORD-00277,2025-07-19,Maple Ridge,CUST-0054,PROD-004,Lumen LED Desk Lamp,Lighting,3,39.9,119.7
+ORD-00278,2025-07-19,Cedar Hills,CUST-0043,PROD-001,Bamboo Desk Organizer,Office,5,24.9,124.5
+ORD-00279,2025-07-22,Harbor Point,CUST-0023,PROD-009,Terracotta Plant Pot,Home Decor,1,18.75,18.75
+ORD-00280,2025-07-22,Harbor Point,CUST-0081,PROD-011,Cordless Hand Vacuum,Appliances,1,129.0,129.0
+ORD-00281,2025-07-22,Silver Lake,CUST-0108,PROD-012,Smart Kettle,Appliances,4,69.9,279.6
+ORD-00282,2025-07-22,Cedar Hills,CUST-0058,PROD-002,Ergo Mesh Chair,Office,2,189.0,378.0
+ORD-00283,2025-07-22,Harbor Point,CUST-0118,PROD-002,Ergo Mesh Chair,Office,1,189.0,189.0
+ORD-00284,2025-07-22,Cedar Hills,CUST-0049,PROD-006,Ceramic Pour-Over Kit,Kitchen,5,29.9,149.5
+ORD-00285,2025-07-23,Maple Ridge,CUST-0105,PROD-008,Linen Throw Blanket,Home Decor,2,49.0,98.0
+ORD-00286,2025-07-24,Cedar Hills,CUST-0106,PROD-005,Aurora Floor Lamp,Lighting,3,84.0,252.0
+ORD-00287,2025-07-26,Maple Ridge,CUST-0014,PROD-004,Lumen LED Desk Lamp,Lighting,5,39.9,199.5
+ORD-00288,2025-07-26,Harbor Point,CUST-0120,PROD-004,Lumen LED Desk Lamp,Lighting,3,39.9,119.7
+ORD-00289,2025-07-26,Cedar Hills,CUST-0069,PROD-009,Terracotta Plant Pot,Home Decor,5,18.75,93.75
+ORD-00290,2025-07-27,Cedar Hills,CUST-0021,PROD-003,Graphite Notebook Set,Office,4,12.5,50.0
+ORD-00291,2025-07-27,Cedar Hills,CUST-0045,PROD-008,Linen Throw Blanket,Home Decor,4,49.0,196.0
+ORD-00292,2025-07-28,Harbor Point,CUST-0012,PROD-010,Woven Storage Basket,Home Decor,1,27.4,27.4
+ORD-00293,2025-07-29,Cedar Hills,CUST-0047,PROD-001,Bamboo Desk Organizer,Office,4,24.9,99.6
+ORD-00294,2025-07-31,Maple Ridge,CUST-0069,PROD-012,Smart Kettle,Appliances,1,69.9,69.9
+ORD-00295,2025-08-01,Harbor Point,CUST-0113,PROD-002,Ergo Mesh Chair,Office,3,189.0,567.0
+ORD-00296,2025-08-01,Maple Ridge,CUST-0053,PROD-010,Woven Storage Basket,Home Decor,3,27.4,82.2
+ORD-00297,2025-08-02,Maple Ridge,CUST-0090,PROD-008,Linen Throw Blanket,Home Decor,1,49.0,49.0
+ORD-00298,2025-08-03,Harbor Point,CUST-0070,PROD-012,Smart Kettle,Appliances,3,69.9,209.7
+ORD-00299,2025-08-04,Maple Ridge,CUST-0024,PROD-012,Smart Kettle,Appliances,5,69.9,349.5
+ORD-00300,2025-08-06,Harbor Point,CUST-0117,PROD-010,Woven Storage Basket,Home Decor,2,27.4,54.8
+ORD-00301,2025-08-06,Harbor Point,CUST-0057,PROD-009,Terracotta Plant Pot,Home Decor,2,18.75,37.5
+ORD-00302,2025-08-07,Harbor Point,CUST-0086,PROD-003,Graphite Notebook Set,Office,5,12.5,62.5
+ORD-00303,2025-08-09,Maple Ridge,CUST-0020,PROD-007,Cast Iron Skillet,Kitchen,2,44.5,89.0
+ORD-00304,2025-08-09,Harbor Point,CUST-0077,PROD-008,Linen Throw Blanket,Home Decor,5,49.0,245.0
+ORD-00305,2025-08-10,Maple Ridge,CUST-0079,PROD-004,Lumen LED Desk Lamp,Lighting,5,39.9,199.5
+ORD-00306,2025-08-10,Cedar Hills,CUST-0111,PROD-005,Aurora Floor Lamp,Lighting,3,84.0,252.0
+ORD-00307,2025-08-12,Harbor Point,CUST-0009,PROD-002,Ergo Mesh Chair,Office,3,189.0,567.0
+ORD-00308,2025-08-13,Cedar Hills,CUST-0037,PROD-005,Aurora Floor Lamp,Lighting,1,84.0,84.0
+ORD-00309,2025-08-15,Harbor Point,CUST-0098,PROD-007,Cast Iron Skillet,Kitchen,4,44.5,178.0
+ORD-00310,2025-08-17,Cedar Hills,CUST-0025,PROD-011,Cordless Hand Vacuum,Appliances,2,129.0,258.0
+ORD-00311,2025-08-18,Harbor Point,CUST-0077,PROD-002,Ergo Mesh Chair,Office,2,189.0,378.0
+ORD-00312,2025-08-18,Maple Ridge,CUST-0026,PROD-009,Terracotta Plant Pot,Home Decor,1,18.75,18.75
+ORD-00313,2025-08-19,Harbor Point,CUST-0075,PROD-006,Ceramic Pour-Over Kit,Kitchen,3,29.9,89.7
+ORD-00314,2025-08-19,Harbor Point,CUST-0107,PROD-005,Aurora Floor Lamp,Lighting,4,84.0,336.0
+ORD-00315,2025-08-20,Maple Ridge,CUST-0016,PROD-004,Lumen LED Desk Lamp,Lighting,1,39.9,39.9
+ORD-00316,2025-08-20,Silver Lake,CUST-0052,PROD-006,Ceramic Pour-Over Kit,Kitchen,3,29.9,89.7
+ORD-00317,2025-08-20,Maple Ridge,CUST-0064,PROD-012,Smart Kettle,Appliances,3,69.9,209.7
+ORD-00318,2025-08-20,Harbor Point,CUST-0068,PROD-002,Ergo Mesh Chair,Office,1,189.0,189.0
+ORD-00319,2025-08-21,Cedar Hills,CUST-0102,PROD-010,Woven Storage Basket,Home Decor,5,27.4,137.0
+ORD-00320,2025-08-24,Cedar Hills,CUST-0006,PROD-006,Ceramic Pour-Over Kit,Kitchen,2,29.9,59.8
+ORD-00321,2025-08-26,Harbor Point,CUST-0003,PROD-002,Ergo Mesh Chair,Office,5,189.0,945.0
+ORD-00322,2025-08-27,Cedar Hills,CUST-0028,PROD-005,Aurora Floor Lamp,Lighting,4,84.0,336.0
+ORD-00323,2025-08-27,Cedar Hills,CUST-0111,PROD-007,Cast Iron Skillet,Kitchen,1,44.5,44.5
+ORD-00324,2025-08-29,Maple Ridge,CUST-0014,PROD-001,Bamboo Desk Organizer,Office,1,24.9,24.9
+ORD-00325,2025-08-30,Silver Lake,CUST-0028,PROD-006,Ceramic Pour-Over Kit,Kitchen,3,29.9,89.7
+ORD-00326,2025-08-30,Cedar Hills,CUST-0076,PROD-004,Lumen LED Desk Lamp,Lighting,5,39.9,199.5
+ORD-00327,2025-08-30,Cedar Hills,CUST-0025,PROD-010,Woven Storage Basket,Home Decor,5,27.4,137.0
+ORD-00328,2025-08-30,Cedar Hills,CUST-0015,PROD-011,Cordless Hand Vacuum,Appliances,1,129.0,129.0
+ORD-00329,2025-08-31,Maple Ridge,CUST-0072,PROD-002,Ergo Mesh Chair,Office,2,189.0,378.0
+ORD-00330,2025-08-31,Maple Ridge,CUST-0074,PROD-003,Graphite Notebook Set,Office,4,12.5,50.0
+ORD-00331,2025-08-31,Cedar Hills,CUST-0061,PROD-003,Graphite Notebook Set,Office,3,12.5,37.5
+ORD-00332,2025-08-31,Cedar Hills,CUST-0007,PROD-001,Bamboo Desk Organizer,Office,2,24.9,49.8
+ORD-00333,2025-09-01,Harbor Point,CUST-0001,PROD-012,Smart Kettle,Appliances,2,69.9,139.8
+ORD-00334,2025-09-01,Harbor Point,CUST-0030,PROD-004,Lumen LED Desk Lamp,Lighting,3,39.9,119.7
+ORD-00335,2025-09-02,Harbor Point,CUST-0073,PROD-002,Ergo Mesh Chair,Office,3,189.0,567.0
+ORD-00336,2025-09-02,Cedar Hills,CUST-0003,PROD-004,Lumen LED Desk Lamp,Lighting,4,39.9,159.6
+ORD-00337,2025-09-03,Harbor Point,CUST-0079,PROD-001,Bamboo Desk Organizer,Office,2,24.9,49.8
+ORD-00338,2025-09-05,Maple Ridge,CUST-0060,PROD-010,Woven Storage Basket,Home Decor,3,27.4,82.2
+ORD-00339,2025-09-05,Harbor Point,CUST-0042,PROD-010,Woven Storage Basket,Home Decor,5,27.4,137.0
+ORD-00340,2025-09-05,Maple Ridge,CUST-0063,PROD-006,Ceramic Pour-Over Kit,Kitchen,3,29.9,89.7
+ORD-00341,2025-09-07,Harbor Point,CUST-0103,PROD-005,Aurora Floor Lamp,Lighting,3,84.0,252.0
+ORD-00342,2025-09-07,Harbor Point,CUST-0088,PROD-011,Cordless Hand Vacuum,Appliances,4,129.0,516.0
+ORD-00343,2025-09-07,Silver Lake,CUST-0093,PROD-005,Aurora Floor Lamp,Lighting,4,84.0,336.0
+ORD-00344,2025-09-08,Maple Ridge,CUST-0018,PROD-009,Terracotta Plant Pot,Home Decor,4,18.75,75.0
+ORD-00345,2025-09-11,Cedar Hills,CUST-0065,PROD-010,Woven Storage Basket,Home Decor,4,27.4,109.6
+ORD-00346,2025-09-12,Harbor Point,CUST-0058,PROD-002,Ergo Mesh Chair,Office,4,189.0,756.0
+ORD-00347,2025-09-12,Maple Ridge,CUST-0087,PROD-003,Graphite Notebook Set,Office,5,12.5,62.5
+ORD-00348,2025-09-12,Maple Ridge,CUST-0096,PROD-008,Linen Throw Blanket,Home Decor,5,49.0,245.0
+ORD-00349,2025-09-13,Silver Lake,CUST-0011,PROD-009,Terracotta Plant Pot,Home Decor,5,18.75,93.75
+ORD-00350,2025-09-13,Maple Ridge,CUST-0039,PROD-008,Linen Throw Blanket,Home Decor,3,49.0,147.0
+ORD-00351,2025-09-13,Harbor Point,CUST-0024,PROD-005,Aurora Floor Lamp,Lighting,5,84.0,420.0
+ORD-00352,2025-09-14,Harbor Point,CUST-0079,PROD-001,Bamboo Desk Organizer,Office,1,24.9,24.9
+ORD-00353,2025-09-15,Cedar Hills,CUST-0016,PROD-004,Lumen LED Desk Lamp,Lighting,5,39.9,199.5
+ORD-00354,2025-09-19,Silver Lake,CUST-0030,PROD-008,Linen Throw Blanket,Home Decor,1,49.0,49.0
+ORD-00355,2025-09-19,Harbor Point,CUST-0018,PROD-002,Ergo Mesh Chair,Office,5,189.0,945.0
+ORD-00356,2025-09-19,Harbor Point,CUST-0057,PROD-010,Woven Storage Basket,Home Decor,1,27.4,27.4
+ORD-00357,2025-09-19,Cedar Hills,CUST-0115,PROD-004,Lumen LED Desk Lamp,Lighting,4,39.9,159.6
+ORD-00358,2025-09-20,Cedar Hills,CUST-0096,PROD-010,Woven Storage Basket,Home Decor,1,27.4,27.4
+ORD-00359,2025-09-20,Maple Ridge,CUST-0017,PROD-006,Ceramic Pour-Over Kit,Kitchen,2,29.9,59.8
+ORD-00360,2025-09-21,Harbor Point,CUST-0092,PROD-010,Woven Storage Basket,Home Decor,1,27.4,27.4
+ORD-00361,2025-09-21,Harbor Point,CUST-0065,PROD-005,Aurora Floor Lamp,Lighting,4,84.0,336.0
+ORD-00362,2025-09-22,Silver Lake,CUST-0101,PROD-005,Aurora Floor Lamp,Lighting,5,84.0,420.0
+ORD-00363,2025-09-23,Harbor Point,CUST-0031,PROD-006,Ceramic Pour-Over Kit,Kitchen,5,29.9,149.5
+ORD-00364,2025-09-24,Maple Ridge,CUST-0029,PROD-002,Ergo Mesh Chair,Office,4,189.0,756.0
+ORD-00365,2025-09-26,Harbor Point,CUST-0090,PROD-002,Ergo Mesh Chair,Office,5,189.0,945.0
+ORD-00366,2025-09-26,Cedar Hills,CUST-0078,PROD-002,Ergo Mesh Chair,Office,3,189.0,567.0
+ORD-00367,2025-09-26,Maple Ridge,CUST-0028,PROD-011,Cordless Hand Vacuum,Appliances,4,129.0,516.0
+ORD-00368,2025-09-27,Harbor Point,CUST-0058,PROD-007,Cast Iron Skillet,Kitchen,4,44.5,178.0
+ORD-00369,2025-09-27,Cedar Hills,CUST-0100,PROD-011,Cordless Hand Vacuum,Appliances,4,129.0,516.0
+ORD-00370,2025-09-29,Harbor Point,CUST-0120,PROD-005,Aurora Floor Lamp,Lighting,1,84.0,84.0
+ORD-00371,2025-09-29,Cedar Hills,CUST-0031,PROD-007,Cast Iron Skillet,Kitchen,2,44.5,89.0
+ORD-00372,2025-09-30,Harbor Point,CUST-0108,PROD-002,Ergo Mesh Chair,Office,5,189.0,945.0
+ORD-00373,2025-09-30,Maple Ridge,CUST-0023,PROD-006,Ceramic Pour-Over Kit,Kitchen,1,29.9,29.9
+ORD-00374,2025-10-01,Cedar Hills,CUST-0089,PROD-003,Graphite Notebook Set,Office,3,12.5,37.5
+ORD-00375,2025-10-01,Maple Ridge,CUST-0018,PROD-006,Ceramic Pour-Over Kit,Kitchen,5,29.9,149.5
+ORD-00376,2025-10-02,Silver Lake,CUST-0035,PROD-012,Smart Kettle,Appliances,1,69.9,69.9
+ORD-00377,2025-10-04,Harbor Point,CUST-0029,PROD-011,Cordless Hand Vacuum,Appliances,5,129.0,645.0
+ORD-00378,2025-10-04,Harbor Point,CUST-0104,PROD-002,Ergo Mesh Chair,Office,2,189.0,378.0
+ORD-00379,2025-10-04,Cedar Hills,CUST-0119,PROD-007,Cast Iron Skillet,Kitchen,2,44.5,89.0
+ORD-00380,2025-10-05,Harbor Point,CUST-0040,PROD-012,Smart Kettle,Appliances,4,69.9,279.6
+ORD-00381,2025-10-05,Maple Ridge,CUST-0034,PROD-003,Graphite Notebook Set,Office,4,12.5,50.0
+ORD-00382,2025-10-06,Silver Lake,CUST-0119,PROD-002,Ergo Mesh Chair,Office,4,189.0,756.0
+ORD-00383,2025-10-07,Cedar Hills,CUST-0071,PROD-008,Linen Throw Blanket,Home Decor,1,49.0,49.0
+ORD-00384,2025-10-07,Silver Lake,CUST-0100,PROD-002,Ergo Mesh Chair,Office,1,189.0,189.0
+ORD-00385,2025-10-07,Cedar Hills,CUST-0026,PROD-007,Cast Iron Skillet,Kitchen,5,44.5,222.5
+ORD-00386,2025-10-08,Harbor Point,CUST-0104,PROD-004,Lumen LED Desk Lamp,Lighting,5,39.9,199.5
+ORD-00387,2025-10-08,Cedar Hills,CUST-0036,PROD-010,Woven Storage Basket,Home Decor,4,27.4,109.6
+ORD-00388,2025-10-09,Harbor Point,CUST-0033,PROD-012,Smart Kettle,Appliances,5,69.9,349.5
+ORD-00389,2025-10-09,Harbor Point,CUST-0093,PROD-003,Graphite Notebook Set,Office,2,12.5,25.0
+ORD-00390,2025-10-10,Silver Lake,CUST-0032,PROD-001,Bamboo Desk Organizer,Office,1,24.9,24.9
+ORD-00391,2025-10-11,Silver Lake,CUST-0064,PROD-007,Cast Iron Skillet,Kitchen,5,44.5,222.5
+ORD-00392,2025-10-12,Maple Ridge,CUST-0001,PROD-008,Linen Throw Blanket,Home Decor,1,49.0,49.0
+ORD-00393,2025-10-12,Maple Ridge,CUST-0018,PROD-010,Woven Storage Basket,Home Decor,3,27.4,82.2
+ORD-00394,2025-10-12,Harbor Point,CUST-0018,PROD-009,Terracotta Plant Pot,Home Decor,5,18.75,93.75
+ORD-00395,2025-10-12,Maple Ridge,CUST-0026,PROD-002,Ergo Mesh Chair,Office,5,189.0,945.0
+ORD-00396,2025-10-13,Maple Ridge,CUST-0073,PROD-001,Bamboo Desk Organizer,Office,1,24.9,24.9
+ORD-00397,2025-10-13,Silver Lake,CUST-0020,PROD-001,Bamboo Desk Organizer,Office,5,24.9,124.5
+ORD-00398,2025-10-14,Harbor Point,CUST-0112,PROD-004,Lumen LED Desk Lamp,Lighting,5,39.9,199.5
+ORD-00399,2025-10-14,Silver Lake,CUST-0031,PROD-005,Aurora Floor Lamp,Lighting,1,84.0,84.0
+ORD-00400,2025-10-14,Harbor Point,CUST-0007,PROD-006,Ceramic Pour-Over Kit,Kitchen,3,29.9,89.7
+ORD-00401,2025-10-15,Cedar Hills,CUST-0107,PROD-004,Lumen LED Desk Lamp,Lighting,4,39.9,159.6
+ORD-00402,2025-10-15,Silver Lake,CUST-0106,PROD-008,Linen Throw Blanket,Home Decor,5,49.0,245.0
+ORD-00403,2025-10-15,Cedar Hills,CUST-0097,PROD-002,Ergo Mesh Chair,Office,3,189.0,567.0
+ORD-00404,2025-10-17,Harbor Point,CUST-0047,PROD-001,Bamboo Desk Organizer,Office,1,24.9,24.9
+ORD-00405,2025-10-18,Silver Lake,CUST-0010,PROD-003,Graphite Notebook Set,Office,5,12.5,62.5
+ORD-00406,2025-10-18,Cedar Hills,CUST-0015,PROD-011,Cordless Hand Vacuum,Appliances,4,129.0,516.0
+ORD-00407,2025-10-18,Cedar Hills,CUST-0050,PROD-006,Ceramic Pour-Over Kit,Kitchen,1,29.9,29.9
+ORD-00408,2025-10-18,Cedar Hills,CUST-0091,PROD-004,Lumen LED Desk Lamp,Lighting,5,39.9,199.5
+ORD-00409,2025-10-21,Silver Lake,CUST-0042,PROD-004,Lumen LED Desk Lamp,Lighting,2,39.9,79.8
+ORD-00410,2025-10-21,Cedar Hills,CUST-0100,PROD-003,Graphite Notebook Set,Office,4,12.5,50.0
+ORD-00411,2025-10-21,Cedar Hills,CUST-0016,PROD-005,Aurora Floor Lamp,Lighting,2,84.0,168.0
+ORD-00412,2025-10-21,Cedar Hills,CUST-0111,PROD-002,Ergo Mesh Chair,Office,1,189.0,189.0
+ORD-00413,2025-10-22,Silver Lake,CUST-0071,PROD-005,Aurora Floor Lamp,Lighting,5,84.0,420.0
+ORD-00414,2025-10-23,Cedar Hills,CUST-0114,PROD-011,Cordless Hand Vacuum,Appliances,1,129.0,129.0
+ORD-00415,2025-10-23,Maple Ridge,CUST-0017,PROD-007,Cast Iron Skillet,Kitchen,3,44.5,133.5
+ORD-00416,2025-10-25,Harbor Point,CUST-0048,PROD-012,Smart Kettle,Appliances,3,69.9,209.7
+ORD-00417,2025-10-27,Cedar Hills,CUST-0118,PROD-011,Cordless Hand Vacuum,Appliances,5,129.0,645.0
+ORD-00418,2025-10-28,Cedar Hills,CUST-0017,PROD-012,Smart Kettle,Appliances,5,69.9,349.5
+ORD-00419,2025-10-29,Harbor Point,CUST-0057,PROD-002,Ergo Mesh Chair,Office,3,189.0,567.0
+ORD-00420,2025-10-29,Harbor Point,CUST-0101,PROD-002,Ergo Mesh Chair,Office,1,189.0,189.0
+ORD-00421,2025-10-30,Cedar Hills,CUST-0014,PROD-001,Bamboo Desk Organizer,Office,3,24.9,74.7
+ORD-00422,2025-10-30,Cedar Hills,CUST-0009,PROD-010,Woven Storage Basket,Home Decor,3,27.4,82.2
+ORD-00423,2025-10-30,Harbor Point,CUST-0075,PROD-011,Cordless Hand Vacuum,Appliances,1,129.0,129.0
+ORD-00424,2025-10-31,Silver Lake,CUST-0050,PROD-009,Terracotta Plant Pot,Home Decor,4,18.75,75.0
+ORD-00425,2025-10-31,Silver Lake,CUST-0004,PROD-001,Bamboo Desk Organizer,Office,2,24.9,49.8
+ORD-00426,2025-10-31,Maple Ridge,CUST-0037,PROD-011,Cordless Hand Vacuum,Appliances,5,129.0,645.0
+ORD-00427,2025-10-31,Maple Ridge,CUST-0050,PROD-012,Smart Kettle,Appliances,1,69.9,69.9
+ORD-00428,2025-11-03,Harbor Point,CUST-0060,PROD-009,Terracotta Plant Pot,Home Decor,1,18.75,18.75
+ORD-00429,2025-11-03,Cedar Hills,CUST-0080,PROD-006,Ceramic Pour-Over Kit,Kitchen,3,29.9,89.7
+ORD-00430,2025-11-04,Maple Ridge,CUST-0047,PROD-010,Woven Storage Basket,Home Decor,3,27.4,82.2
+ORD-00431,2025-11-05,Cedar Hills,CUST-0089,PROD-008,Linen Throw Blanket,Home Decor,1,49.0,49.0
+ORD-00432,2025-11-06,Harbor Point,CUST-0112,PROD-007,Cast Iron Skillet,Kitchen,3,44.5,133.5
+ORD-00433,2025-11-07,Cedar Hills,CUST-0118,PROD-003,Graphite Notebook Set,Office,5,12.5,62.5
+ORD-00434,2025-11-08,Cedar Hills,CUST-0036,PROD-006,Ceramic Pour-Over Kit,Kitchen,1,29.9,29.9
+ORD-00435,2025-11-09,Harbor Point,CUST-0067,PROD-009,Terracotta Plant Pot,Home Decor,5,18.75,93.75
+ORD-00436,2025-11-09,Harbor Point,CUST-0023,PROD-004,Lumen LED Desk Lamp,Lighting,5,39.9,199.5
+ORD-00437,2025-11-09,Harbor Point,CUST-0109,PROD-001,Bamboo Desk Organizer,Office,3,24.9,74.7
+ORD-00438,2025-11-10,Maple Ridge,CUST-0030,PROD-002,Ergo Mesh Chair,Office,1,189.0,189.0
+ORD-00439,2025-11-10,Harbor Point,CUST-0019,PROD-008,Linen Throw Blanket,Home Decor,2,49.0,98.0
+ORD-00440,2025-11-12,Silver Lake,CUST-0044,PROD-002,Ergo Mesh Chair,Office,4,189.0,756.0
+ORD-00441,2025-11-13,Harbor Point,CUST-0053,PROD-004,Lumen LED Desk Lamp,Lighting,4,39.9,159.6
+ORD-00442,2025-11-16,Silver Lake,CUST-0103,PROD-008,Linen Throw Blanket,Home Decor,3,49.0,147.0
+ORD-00443,2025-11-20,Silver Lake,CUST-0050,PROD-009,Terracotta Plant Pot,Home Decor,2,18.75,37.5
+ORD-00444,2025-11-21,Cedar Hills,CUST-0098,PROD-012,Smart Kettle,Appliances,5,69.9,349.5
+ORD-00445,2025-11-22,Maple Ridge,CUST-0102,PROD-007,Cast Iron Skillet,Kitchen,3,44.5,133.5
+ORD-00446,2025-11-22,Harbor Point,CUST-0071,PROD-003,Graphite Notebook Set,Office,4,12.5,50.0
+ORD-00447,2025-11-22,Maple Ridge,CUST-0036,PROD-010,Woven Storage Basket,Home Decor,5,27.4,137.0
+ORD-00448,2025-11-22,Maple Ridge,CUST-0008,PROD-012,Smart Kettle,Appliances,1,69.9,69.9
+ORD-00449,2025-11-23,Silver Lake,CUST-0045,PROD-002,Ergo Mesh Chair,Office,4,189.0,756.0
+ORD-00450,2025-11-24,Maple Ridge,CUST-0085,PROD-002,Ergo Mesh Chair,Office,2,189.0,378.0
+ORD-00451,2025-11-24,Silver Lake,CUST-0032,PROD-011,Cordless Hand Vacuum,Appliances,1,129.0,129.0
+ORD-00452,2025-11-25,Harbor Point,CUST-0111,PROD-008,Linen Throw Blanket,Home Decor,3,49.0,147.0
+ORD-00453,2025-11-26,Cedar Hills,CUST-0063,PROD-003,Graphite Notebook Set,Office,1,12.5,12.5
+ORD-00454,2025-11-27,Cedar Hills,CUST-0117,PROD-009,Terracotta Plant Pot,Home Decor,5,18.75,93.75
+ORD-00455,2025-11-27,Harbor Point,CUST-0090,PROD-008,Linen Throw Blanket,Home Decor,3,49.0,147.0
+ORD-00456,2025-11-28,Silver Lake,CUST-0022,PROD-001,Bamboo Desk Organizer,Office,4,24.9,99.6
+ORD-00457,2025-12-01,Maple Ridge,CUST-0007,PROD-011,Cordless Hand Vacuum,Appliances,5,129.0,645.0
+ORD-00458,2025-12-01,Maple Ridge,CUST-0106,PROD-008,Linen Throw Blanket,Home Decor,5,49.0,245.0
+ORD-00459,2025-12-03,Cedar Hills,CUST-0035,PROD-011,Cordless Hand Vacuum,Appliances,3,129.0,387.0
+ORD-00460,2025-12-04,Harbor Point,CUST-0073,PROD-007,Cast Iron Skillet,Kitchen,1,44.5,44.5
+ORD-00461,2025-12-04,Harbor Point,CUST-0073,PROD-011,Cordless Hand Vacuum,Appliances,3,129.0,387.0
+ORD-00462,2025-12-05,Cedar Hills,CUST-0019,PROD-008,Linen Throw Blanket,Home Decor,3,49.0,147.0
+ORD-00463,2025-12-05,Harbor Point,CUST-0048,PROD-004,Lumen LED Desk Lamp,Lighting,2,39.9,79.8
+ORD-00464,2025-12-05,Silver Lake,CUST-0067,PROD-009,Terracotta Plant Pot,Home Decor,4,18.75,75.0
+ORD-00465,2025-12-05,Maple Ridge,CUST-0034,PROD-001,Bamboo Desk Organizer,Office,3,24.9,74.7
+ORD-00466,2025-12-07,Silver Lake,CUST-0019,PROD-003,Graphite Notebook Set,Office,4,12.5,50.0
+ORD-00467,2025-12-07,Harbor Point,CUST-0064,PROD-005,Aurora Floor Lamp,Lighting,3,84.0,252.0
+ORD-00468,2025-12-08,Maple Ridge,CUST-0066,PROD-010,Woven Storage Basket,Home Decor,2,27.4,54.8
+ORD-00469,2025-12-08,Maple Ridge,CUST-0032,PROD-006,Ceramic Pour-Over Kit,Kitchen,2,29.9,59.8
+ORD-00470,2025-12-08,Cedar Hills,CUST-0005,PROD-006,Ceramic Pour-Over Kit,Kitchen,1,29.9,29.9
+ORD-00471,2025-12-09,Silver Lake,CUST-0114,PROD-009,Terracotta Plant Pot,Home Decor,1,18.75,18.75
+ORD-00472,2025-12-09,Harbor Point,CUST-0030,PROD-010,Woven Storage Basket,Home Decor,1,27.4,27.4
+ORD-00473,2025-12-09,Cedar Hills,CUST-0017,PROD-011,Cordless Hand Vacuum,Appliances,1,129.0,129.0
+ORD-00474,2025-12-10,Maple Ridge,CUST-0036,PROD-010,Woven Storage Basket,Home Decor,2,27.4,54.8
+ORD-00475,2025-12-12,Harbor Point,CUST-0022,PROD-012,Smart Kettle,Appliances,3,69.9,209.7
+ORD-00476,2025-12-14,Harbor Point,CUST-0067,PROD-002,Ergo Mesh Chair,Office,5,189.0,945.0
+ORD-00477,2025-12-15,Maple Ridge,CUST-0042,PROD-003,Graphite Notebook Set,Office,4,12.5,50.0
+ORD-00478,2025-12-15,Cedar Hills,CUST-0111,PROD-008,Linen Throw Blanket,Home Decor,3,49.0,147.0
+ORD-00479,2025-12-16,Maple Ridge,CUST-0048,PROD-006,Ceramic Pour-Over Kit,Kitchen,4,29.9,119.6
+ORD-00480,2025-12-17,Harbor Point,CUST-0020,PROD-008,Linen Throw Blanket,Home Decor,5,49.0,245.0
+ORD-00481,2025-12-17,Harbor Point,CUST-0110,PROD-011,Cordless Hand Vacuum,Appliances,1,129.0,129.0
+ORD-00482,2025-12-18,Maple Ridge,CUST-0116,PROD-003,Graphite Notebook Set,Office,1,12.5,12.5
+ORD-00483,2025-12-18,Harbor Point,CUST-0113,PROD-006,Ceramic Pour-Over Kit,Kitchen,5,29.9,149.5
+ORD-00484,2025-12-19,Harbor Point,CUST-0089,PROD-003,Graphite Notebook Set,Office,3,12.5,37.5
+ORD-00485,2025-12-20,Cedar Hills,CUST-0111,PROD-009,Terracotta Plant Pot,Home Decor,3,18.75,56.25
+ORD-00486,2025-12-20,Cedar Hills,CUST-0110,PROD-011,Cordless Hand Vacuum,Appliances,2,129.0,258.0
+ORD-00487,2025-12-20,Silver Lake,CUST-0013,PROD-004,Lumen LED Desk Lamp,Lighting,4,39.9,159.6
+ORD-00488,2025-12-20,Maple Ridge,CUST-0034,PROD-008,Linen Throw Blanket,Home Decor,4,49.0,196.0
+ORD-00489,2025-12-21,Silver Lake,CUST-0071,PROD-012,Smart Kettle,Appliances,2,69.9,139.8
+ORD-00490,2025-12-21,Harbor Point,CUST-0030,PROD-007,Cast Iron Skillet,Kitchen,4,44.5,178.0
+ORD-00491,2025-12-22,Silver Lake,CUST-0093,PROD-009,Terracotta Plant Pot,Home Decor,4,18.75,75.0
+ORD-00492,2025-12-22,Harbor Point,CUST-0020,PROD-005,Aurora Floor Lamp,Lighting,4,84.0,336.0
+ORD-00493,2025-12-23,Maple Ridge,CUST-0028,PROD-005,Aurora Floor Lamp,Lighting,5,84.0,420.0
+ORD-00494,2025-12-25,Maple Ridge,CUST-0087,PROD-009,Terracotta Plant Pot,Home Decor,2,18.75,37.5
+ORD-00495,2025-12-28,Harbor Point,CUST-0070,PROD-002,Ergo Mesh Chair,Office,2,189.0,378.0
+ORD-00496,2025-12-28,Maple Ridge,CUST-0049,PROD-004,Lumen LED Desk Lamp,Lighting,5,39.9,199.5
+ORD-00497,2025-12-29,Harbor Point,CUST-0016,PROD-005,Aurora Floor Lamp,Lighting,3,84.0,252.0
+ORD-00498,2025-12-29,Maple Ridge,CUST-0103,PROD-005,Aurora Floor Lamp,Lighting,1,84.0,84.0
+ORD-00499,2025-12-30,Maple Ridge,CUST-0075,PROD-010,Woven Storage Basket,Home Decor,3,27.4,82.2
+ORD-00500,2025-12-31,Cedar Hills,CUST-0065,PROD-001,Bamboo Desk Organizer,Office,3,24.9,74.7

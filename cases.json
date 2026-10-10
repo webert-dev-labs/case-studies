@@ -1,0 +1,34 @@
+{
+  "site": {
+    "title": "Case Studies",
+    "tagline": "Data analysis and automation solutions, built end to end.",
+    "intro": "Each case study takes a common business problem and solves it with working code, automated tests and a ready-to-share result. All scenarios and data are fictitious.",
+    "owner": "webert-dev-labs",
+    "repo_url": "https://github.com/webert-dev-labs/case-studies",
+    "profile_url": "https://github.com/webert-dev-labs",
+    "site_url": "https://webert-dev-labs.github.io/case-studies/",
+    "social_image": "public/social-preview.png",
+    "year": 2026
+  },
+  "cases": [
+    {
+      "slug": "sales-report",
+      "title": "Automated Sales Report",
+      "scenario": "Brightleaf Supplies, a fictitious home-and-office goods retailer with four branches",
+      "problem": "Monthly sales reports built by hand in spreadsheets are slow, error-prone and inconsistent from one month to the next.",
+      "solution": "One command turns a sales file into a self-contained HTML report with KPI cards, charts by month, branch and category, and a top-products ranking.",
+      "result": "The full report is rebuilt in about a second, with identical numbers for identical input.",
+      "highlights": [
+        {"value": "$90,267", "label": "revenue analysed"},
+        {"value": "500", "label": "orders processed"},
+        {"value": "~1 s", "label": "to rebuild the report"},
+        {"value": "17", "label": "automated tests"}
+      ],
+      "stack": ["Python", "pandas", "Matplotlib", "pytest"],
+      "image": "public/sales-report-full.png",
+      "image_alt": "Sales report with KPI cards and a monthly revenue chart",
+      "demo": "demos/sales-report.html",
+      "path": "sales-report"
+    }
+  ]
+}
