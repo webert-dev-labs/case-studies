@@ -29,6 +29,25 @@
       "image_alt": "Sales report with KPI cards and a monthly revenue chart",
       "demo": "demos/sales-report.html",
       "path": "sales-report"
+    },
+    {
+      "slug": "sales-dashboard",
+      "title": "Sales & Inventory Dashboard (Power BI)",
+      "scenario": "The same fictitious retailer, two years of sales and month-end stock across four branches and twelve products",
+      "problem": "Sales, margin and stock live in separate spreadsheets, so managers cannot see whether growth comes with healthy margins or where products run out.",
+      "solution": "A star-schema Power BI model with 20 DAX measures (time intelligence, semi-additive stock) and three report pages drawn with SVG measures in native visuals.",
+      "result": "Every number in the report matches an independent Python reference, from yearly revenue down to monthly stockout rates.",
+      "highlights": [
+        {"value": "+12.9%", "label": "revenue vs last year"},
+        {"value": "46.3%", "label": "gross margin"},
+        {"value": "0.7%", "label": "stockout rate"},
+        {"value": "20", "label": "DAX measures"}
+      ],
+      "stack": ["Power BI", "DAX", "Power Query", "Python"],
+      "image": "public/sales-dashboard-overview.png",
+      "image_fit": "contain",
+      "image_alt": "Power BI overview page with KPI cards, monthly revenue vs last year and margin by category",
+      "path": "sales-dashboard"
     }
   ]
 }

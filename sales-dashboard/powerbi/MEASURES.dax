@@ -1,0 +1,74 @@
+// Brightleaf Supplies dashboard measures.
+// Create them in a dedicated table: Home > Enter data > name it "_Measures" > Load,
+// then New measure for each block below. Format strings are in the comment above each one.
+// Every measure has a Python twin in src/sales_dashboard/reference_measures.py; the
+// expected values are in docs/expected-results.md.
+
+// ---------- Sales ----------
+
+// Format: Currency, 2 decimals
+Total Revenue = SUM ( fact_sales[net_revenue] )
+
+// Format: Currency, 2 decimals
+Total Cost = SUM ( fact_sales[cost] )
+
+// Format: Currency, 2 decimals
+Gross Margin = [Total Revenue] - [Total Cost]
+
+// Format: Percentage, 2 decimals
+Gross Margin % = DIVIDE ( [Gross Margin], [Total Revenue] )
+
+// Format: Whole number, thousands separator
+Orders = DISTINCTCOUNT ( fact_sales[order_id] )
+
+// Format: Whole number, thousands separator
+Units Sold = SUM ( fact_sales[quantity] )
+
+// Format: Currency, 2 decimals
+Average Ticket = DIVIDE ( [Total Revenue], [Orders] )
+
+// Revenue given away as discounts, before the discount was applied.
+// Format: Currency, 2 decimals
+Discount Given =
+SUMX (
+    fact_sales,
+    fact_sales[quantity] * fact_sales[unit_price] * fact_sales[discount_pct]
+)
+
+// ---------- Time intelligence (needs dim_date marked as date table) ----------
+
+// Format: Currency, 2 decimals
+Revenue LY =
+CALCULATE ( [Total Revenue], SAMEPERIODLASTYEAR ( dim_date[date] ) )
+
+// Format: Percentage, 2 decimals
+Revenue YoY % =
+DIVIDE ( [Total Revenue] - [Revenue LY], [Revenue LY] )
+
+// Format: Percentage, 2 decimals
+Gross Margin % LY =
+CALCULATE ( [Gross Margin %], SAMEPERIODLASTYEAR ( dim_date[date] ) )
+
+// ---------- Inventory (semi-additive: last snapshot in the selected period) ----------
+
+// Format: Whole number, thousands separator
+Stock on Hand =
+CALCULATE (
+    SUM ( fact_inventory[stock_on_hand] ),
+    LASTNONBLANK ( dim_date[date], CALCULATE ( COUNTROWS ( fact_inventory ) ) )
+)
+
+// Share of month-end snapshots with zero stock.
+// "+ 0" turns an empty count into 0, so periods without stockouts show 0% instead of blank
+// (blank would drop those months from the SVG Inventory chart).
+// Format: Percentage, 2 decimals
+Stockout Rate =
+DIVIDE (
+    CALCULATE ( COUNTROWS ( fact_inventory ), fact_inventory[stock_on_hand] = 0 ) + 0,
+    COUNTROWS ( fact_inventory )
+)
+
+// Days the last stock would last at the period's average daily sales.
+// Format: Decimal number, 1 decimal
+Days of Supply =
+DIVIDE ( [Stock on Hand], DIVIDE ( [Units Sold], COUNTROWS ( dim_date ) ) )

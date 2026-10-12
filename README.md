@@ -28,6 +28,23 @@ automated tests and a ready-to-share result. All scenarios and data are fictitio
       <p><code>Python</code> <code>pandas</code> <code>Matplotlib</code> <code>pytest</code></p>
     </td>
   </tr>
+  <tr>
+    <td width="45%" valign="top">
+      <a href="sales-dashboard/">
+        <img src="docs/public/sales-dashboard-overview.png" alt="Power BI overview page of the sales and inventory dashboard">
+      </a>
+    </td>
+    <td valign="top">
+      <h3><a href="sales-dashboard/">Sales &amp; Inventory Dashboard (Power BI)</a></h3>
+      <p><strong>Problem:</strong> sales, margin and stock live in separate spreadsheets, so growth,
+      margin and stockouts are never seen together.</p>
+      <p><strong>Solution:</strong> a star-schema Power BI model with 20 DAX measures and three
+      report pages drawn with SVG measures in native visuals.</p>
+      <p><strong>Result:</strong> every number in the report matches an independent Python
+      reference.</p>
+      <p><code>Power BI</code> <code>DAX</code> <code>Power Query</code> <code>Python</code></p>
+    </td>
+  </tr>
 </table>
 
 ---

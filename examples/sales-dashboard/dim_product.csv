@@ -1,0 +1,13 @@
+product_id,product_name,category,unit_price,unit_cost
+PROD-001,Bamboo Desk Organizer,Office,24.9,11.2
+PROD-002,Ergo Mesh Chair,Office,189.0,104.0
+PROD-003,Graphite Notebook Set,Office,12.5,4.4
+PROD-004,Lumen LED Desk Lamp,Lighting,39.9,19.5
+PROD-005,Aurora Floor Lamp,Lighting,84.0,46.2
+PROD-006,Ceramic Pour-Over Kit,Kitchen,29.9,12.1
+PROD-007,Cast Iron Skillet,Kitchen,44.5,24.9
+PROD-008,Linen Throw Blanket,Home Decor,49.0,21.5
+PROD-009,Terracotta Plant Pot,Home Decor,18.75,6.9
+PROD-010,Woven Storage Basket,Home Decor,27.4,12.3
+PROD-011,Cordless Hand Vacuum,Appliances,129.0,82.6
+PROD-012,Smart Kettle,Appliances,69.9,41.9

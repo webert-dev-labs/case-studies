@@ -56,6 +56,7 @@ h2 { font-size: 1.4rem; letter-spacing: -.01em; margin: 0 0 24px; }
   min-height: 360px; overflow: hidden; }
 .case-media img { position: absolute; inset: 0; width: 100%; height: 100%;
   object-fit: cover; object-position: top center; transition: transform .3s ease; }
+.case-media.fit-contain img { object-fit: contain; object-position: center; padding: 20px; }
 .case-media:hover img { transform: scale(1.02); }
 .case-body { padding: 28px 28px 24px; }
 .case-index { color: var(--muted); font-size: .8rem; font-weight: 600; letter-spacing: .08em;
@@ -129,7 +130,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
     <section id="cases" aria-label="Case studies">
       
     <article class="case" id="sales-report">
-      <a class="case-media" href="demos/sales-report.html">
+      <a class="case-media fit-cover" href="demos/sales-report.html">
         <img src="public/sales-report-full.png" alt="Sales report with KPI cards and a monthly revenue chart" loading="lazy">
       </a>
       <div class="case-body">
@@ -146,6 +147,27 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
         <div class="actions">
           <a class="btn btn-primary" href="demos/sales-report.html">Open live report</a>
           <a class="btn btn-secondary" href="https://github.com/webert-dev-labs/case-studies/tree/main/sales-report">View code</a>
+        </div>
+      </div>
+    </article>
+    <article class="case" id="sales-dashboard">
+      <a class="case-media fit-contain" href="https://github.com/webert-dev-labs/case-studies/tree/main/sales-dashboard">
+        <img src="public/sales-dashboard-overview.png" alt="Power BI overview page with KPI cards, monthly revenue vs last year and margin by category" loading="lazy">
+      </a>
+      <div class="case-body">
+        <p class="case-index">Case 02</p>
+        <h3>Sales &amp; Inventory Dashboard (Power BI)</h3>
+        <p class="scenario">The same fictitious retailer, two years of sales and month-end stock across four branches and twelve products</p>
+        <dl class="psr">
+          <div><dt>Problem</dt><dd>Sales, margin and stock live in separate spreadsheets, so managers cannot see whether growth comes with healthy margins or where products run out.</dd></div>
+          <div><dt>Solution</dt><dd>A star-schema Power BI model with 20 DAX measures (time intelligence, semi-additive stock) and three report pages drawn with SVG measures in native visuals.</dd></div>
+          <div><dt>Result</dt><dd>Every number in the report matches an independent Python reference, from yearly revenue down to monthly stockout rates.</dd></div>
+        </dl>
+        <ul class="highlights"><li><span class="hl-value">+12.9%</span><span class="hl-label">revenue vs last year</span></li><li><span class="hl-value">46.3%</span><span class="hl-label">gross margin</span></li><li><span class="hl-value">0.7%</span><span class="hl-label">stockout rate</span></li><li><span class="hl-value">20</span><span class="hl-label">DAX measures</span></li></ul>
+        <ul class="stack" aria-label="Technologies"><li>Power BI</li><li>DAX</li><li>Power Query</li><li>Python</li></ul>
+        <div class="actions">
+          
+          <a class="btn btn-secondary" href="https://github.com/webert-dev-labs/case-studies/tree/main/sales-dashboard">View code</a>
         </div>
       </div>
     </article>

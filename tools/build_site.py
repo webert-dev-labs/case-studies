@@ -27,6 +27,10 @@ REQUIRED_CASE_FIELDS = (
     "highlights", "stack", "image", "image_alt", "path",
 )
 
+# Optional "image_fit": "cover" crops a tall page from the top; "contain" shows a wide
+# screenshot whole, centred in the card.
+IMAGE_FITS = ("cover", "contain")
+
 
 def load_data(path: Path = DATA_FILE) -> dict:
     data = json.loads(Path(path).read_text(encoding="utf-8"))
@@ -45,6 +49,8 @@ def validate(data: dict) -> None:
         missing = [f for f in REQUIRED_CASE_FIELDS if not case.get(f)]
         if missing:
             raise ValueError(f"case #{i + 1} is missing: {', '.join(missing)}")
+        if case.get("image_fit", "cover") not in IMAGE_FITS:
+            raise ValueError(f"case #{i + 1} has an invalid image_fit: {case['image_fit']}")
         if case["slug"] in slugs:
             raise ValueError(f"duplicate case slug: {case['slug']}")
         slugs.add(case["slug"])
@@ -69,7 +75,7 @@ def _case(case: dict, index: int, repo_url: str) -> str:
     stack = "".join(f"<li>{escape(s)}</li>" for s in case["stack"])
     return f"""
     <article class="case" id="{escape(case['slug'])}">
-      <a class="case-media" href="{escape(case.get('demo') or code_url)}">
+      <a class="case-media fit-{case.get('image_fit', 'cover')}" href="{escape(case.get('demo') or code_url)}">
         <img src="{escape(case['image'])}" alt="{escape(case['image_alt'])}" loading="lazy">
       </a>
       <div class="case-body">
@@ -130,6 +136,7 @@ h2 { font-size: 1.4rem; letter-spacing: -.01em; margin: 0 0 24px; }
   min-height: 360px; overflow: hidden; }
 .case-media img { position: absolute; inset: 0; width: 100%; height: 100%;
   object-fit: cover; object-position: top center; transition: transform .3s ease; }
+.case-media.fit-contain img { object-fit: contain; object-position: center; padding: 20px; }
 .case-media:hover img { transform: scale(1.02); }
 .case-body { padding: 28px 28px 24px; }
 .case-index { color: var(--muted); font-size: .8rem; font-weight: 600; letter-spacing: .08em;
