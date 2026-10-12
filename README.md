@@ -1,8 +1,9 @@
 # Case Studies
 
-**Data analysis and automation solutions, built end to end.**
-Each case study takes a common business problem and solves it with working code,
-automated tests and a ready-to-share result. All scenarios and data are fictitious.
+**Data analysis, Power BI dashboards and automation, built end to end.**
+Each case study takes a common business problem and solves it with Python or Power BI,
+checks every result with automated tests or an independent reference, and ends with a
+ready-to-share result. All scenarios and data are fictitious.
 
 **🌐 Browse the case studies online: [webert-dev-labs.github.io/case-studies](https://webert-dev-labs.github.io/case-studies/)**
 

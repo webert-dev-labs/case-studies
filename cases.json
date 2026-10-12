@@ -1,13 +1,13 @@
 {
   "site": {
     "title": "Case Studies",
-    "tagline": "Data analysis and automation solutions, built end to end.",
-    "intro": "Each case study takes a common business problem and solves it with working code, automated tests and a ready-to-share result. All scenarios and data are fictitious.",
+    "tagline": "Data analysis, Power BI dashboards and automation, built end\u00a0to\u00a0end.",
+    "intro": "Each case study takes a common business problem and solves it with Python or Power BI, checks every result with automated tests or an independent reference, and ends with a ready-to-share result. All scenarios and data are fictitious.",
     "owner": "webert-dev-labs",
     "repo_url": "https://github.com/webert-dev-labs/case-studies",
     "profile_url": "https://github.com/webert-dev-labs",
     "site_url": "https://webert-dev-labs.github.io/case-studies/",
-    "social_image": "public/social-preview.png",
+    "social_image": "public/social-preview-v2.png",
     "year": 2026
   },
   "cases": [
