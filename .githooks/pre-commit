@@ -7,8 +7,12 @@
 
 set -u
 HOOK_DIR="$(cd "$(dirname "$0")" && pwd)"
-TERM_FILES=("$HOOK_DIR/blocked-terms.txt" "$HOOK_DIR/blocked-terms.local.txt")
+SHARED_TERMS="$HOOK_DIR/blocked-terms.txt"
+LOCAL_TERMS="$HOOK_DIR/blocked-terms.local.txt"   # private terms, ignored by Git
+# Generic example folders that documentation may show on purpose (prefix match).
+ALLOWED_DRIVE_PATHS=('C:\brightleaf-powerbi')
 FAILS=()
+IMAGE_CANDIDATES=()
 
 # Kit files are not scanned (they mention the rules on purpose)
 skip() {
@@ -18,33 +22,61 @@ skip() {
   return 1
 }
 
+# Prints the terms of a list file, without comments or blank lines
+terms_in() {
+  [ -f "$1" ] || return 0
+  while IFS= read -r term || [ -n "$term" ]; do
+    term="${term%%$'\r'}"
+    [[ -z "$term" || "$term" == \#* ]] && continue
+    printf '%s\n' "$term"
+  done < "$1"
+}
+
 mapfile -t FILES < <(git diff --cached --name-only --diff-filter=ACMR)
+mapfile -t PRIVATE < <(terms_in "$LOCAL_TERMS")
+mapfile -t SHARED < <(terms_in "$SHARED_TERMS")
 
 for f in "${FILES[@]}"; do
   skip "$f" && continue
+  lower="${f,,}"
 
   # ---- 1. Forbidden file types (catches "git add -f" too) ----
-  case "$f" in
+  case "$lower" in
     examples/*) ;;  # fictitious demo data allowed
     *.xlsx|*.xlsm|*.xls|*.csv|*.tsv|*.parquet|*.db|*.sqlite|*.sqlite3|*.accdb|*.mdb|*.pbix|*.pbit|*.docx|*.pdf|*.pptx)
       FAILS+=("[data/document file] $f") ; continue ;;
   esac
-  case "$f" in
+  case "$lower" in
     .env|.env.*|*.key|*.pem|*.p12|*.pfx)
       [ "$f" != ".env.example" ] && { FAILS+=("[secret file] $f"); continue; } ;;
   esac
-  case "$f" in
+  case "$lower" in
     notes/*|drafts/*|private/*|*_private.*|*_personal.*)
       FAILS+=("[personal file] $f") ; continue ;;
   esac
+  # Photos and these image formats can carry EXIF data (device, date, location)
+  case "$lower" in
+    *.jpg|*.jpeg|*.gif|*.webp|*.bmp|*.tif|*.tiff|*.heic)
+      FAILS+=("[image format may carry EXIF: save as PNG] $f") ; continue ;;
+  esac
+
+  # Private terms in the file name or folder
+  for term in "${PRIVATE[@]}"; do
+    printf '%s' "$f" | grep -Fiq -- "$term" && FAILS+=("[private term in file name] $f")
+  done
 
   # Large files (5 MB or more) usually mean exported data or a stray build artifact
   SIZE="$(git cat-file -s ":$f" 2>/dev/null || echo 0)"
   [ "$SIZE" -ge 5242880 ] && { FAILS+=("[large file >= 5 MB] $f"); continue; }
 
-  # ---- 2. Content (text files only) ----
+  # PNG files and pages with embedded images are checked for metadata after the loop
+  case "$lower" in
+    *.png|*.html|*.htm|*.md|*.svg) IMAGE_CANDIDATES+=("$f") ;;
+  esac
+
+  # ---- 2. Content (text files only; binary files are skipped without reading them) ----
+  git cat-file blob ":$f" 2>/dev/null | grep -qI . || continue
   CONTENT="$(git show ":$f" 2>/dev/null)" || continue
-  printf '%s' "$CONTENT" | grep -qI . 2>/dev/null || continue
 
   # Brazilian CPF / CNPJ (formatted)
   printf '%s' "$CONTENT" | grep -Eq '[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}' && FAILS+=("[CPF] $f")
@@ -58,24 +90,49 @@ for f in "${FILES[@]}"; do
   printf '%s' "$CONTENT" | grep -Eq 'BEGIN (RSA |EC |OPENSSH |)PRIVATE KEY|ghp_[A-Za-z0-9]{20,}|github_pat_[A-Za-z0-9_]{20,}|sk-[A-Za-z0-9_-]{20,}|AKIA[0-9A-Z]{16}' \
     && FAILS+=("[key/token] $f")
 
-  # Absolute paths from a local machine (reveal user names and folder layout)
-  printf '%s' "$CONTENT" | grep -Eq '/home/[A-Za-z0-9._-]+/|/Users/[A-Za-z0-9._-]+/|[A-Za-z]:\\Users\\|/tmp/claude-' \
+  # Absolute paths from a local machine (reveal user names and folder layout):
+  # user folders, session folders and any drive-letter path except the allowed examples
+  printf '%s' "$CONTENT" | grep -Eq '/home/[A-Za-z0-9._-]+/|/Users/[A-Za-z0-9._-]+/|/tmp/claude-' \
     && FAILS+=("[local path] $f")
+  while IFS= read -r path; do
+    [ -z "$path" ] && continue
+    allowed=0
+    for prefix in "${ALLOWED_DRIVE_PATHS[@]}"; do
+      [[ "${path,,}" == "${prefix,,}"* ]] && allowed=1
+    done
+    [ "$allowed" -eq 0 ] && { FAILS+=("[local path] $f"); break; }
+  done < <(printf '%s' "$CONTENT" | grep -Eo '[A-Za-z]:\\[A-Za-z0-9_][^[:space:]]*')
 
   # Hard-coded passwords
   printf '%s' "$CONTENT" | grep -Eiq '(senha|password|passwd|pwd)[[:space:]]*[:=][[:space:]]*["'"'"'][^"'"'"']{3,}' \
     && FAILS+=("[hard-coded password] $f")
 
-  # Blocked terms (shared list + optional local list that is never committed)
-  for tf in "${TERM_FILES[@]}"; do
-    [ -f "$tf" ] || continue
-    while IFS= read -r term || [ -n "$term" ]; do
-      term="${term%%$'\r'}"
-      [[ -z "$term" || "$term" == \#* ]] && continue
-      printf '%s' "$CONTENT" | grep -Fiwq -- "$term" && FAILS+=("[blocked term] $f")
-    done < "$tf"
+  # Blocked terms: shared list as whole words; private list anywhere, even inside a
+  # longer word or folder name
+  for term in "${SHARED[@]}"; do
+    printf '%s' "$CONTENT" | grep -Fiwq -- "$term" && FAILS+=("[blocked term] $f")
+  done
+  for term in "${PRIVATE[@]}"; do
+    printf '%s' "$CONTENT" | grep -Fiq -- "$term" && FAILS+=("[private term] $f")
   done
 done
+
+# ---- 3. Image metadata (text, dates, software, colour profiles that name a device) ----
+if [ ${#IMAGE_CANDIDATES[@]} -gt 0 ]; then
+  PY="${HOOK_PYTHON:-$(command -v python3 || command -v python || true)}"
+  if [ -n "$PY" ] && "$PY" -c 'import zlib' >/dev/null 2>&1; then
+    while IFS= read -r line; do
+      [ -n "$line" ] && FAILS+=("$line")
+    done < <("$PY" "$HOOK_DIR/check-images.py" "${IMAGE_CANDIDATES[@]}")
+  else
+    # Without Python the images cannot be checked, so they are not let through
+    for f in "${IMAGE_CANDIDATES[@]}"; do
+      if [[ "${f,,}" == *.png ]] || git cat-file blob ":$f" | grep -aq 'data:image/png;base64'; then
+        FAILS+=("[image not checked: Python is needed to read image metadata] $f")
+      fi
+    done
+  fi
+fi
 
 if [ ${#FAILS[@]} -gt 0 ]; then
   echo ""
