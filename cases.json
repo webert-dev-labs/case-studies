@@ -22,7 +22,7 @@
         {"value": "$90,267", "label": "revenue analysed"},
         {"value": "500", "label": "orders processed"},
         {"value": "~1 s", "label": "to rebuild the report"},
-        {"value": "17", "label": "automated tests"}
+        {"value": "19", "label": "automated tests"}
       ],
       "stack": ["Python", "pandas", "Matplotlib", "pytest"],
       "image": "public/sales-report-full.png",
