@@ -31,7 +31,7 @@ automated tests and a ready-to-share result. All scenarios and data are fictitio
   <tr>
     <td width="45%" valign="top">
       <a href="sales-dashboard/">
-        <img src="docs/public/sales-dashboard-overview.png" alt="Power BI overview page of the sales and inventory dashboard">
+        <img src="docs/public/sales-dashboard-preview.png" alt="Power BI overview page of the sales and inventory dashboard">
       </a>
     </td>
     <td valign="top">
