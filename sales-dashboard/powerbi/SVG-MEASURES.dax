@@ -1,0 +1,253 @@
+// SVG visual measures for native Power BI visuals (no custom visual, no sign-in).
+// Each measure returns an SVG image as a data URI. For each measure:
+//   Measure tools > Data category = Image URL.
+// Show it in a native Table visual with only that measure in Columns, then
+//   Format visual > Image size = the width and height written above the measure,
+//   and turn off column headers, totals and grid lines.
+// The Table visual caps images at 512 x 512 px, so every drawing is at most 512 wide.
+// (The native Image visual cannot read a measure, only a column.)
+// Select a single year with a slicer; the measures respond to filters like any other.
+//
+// Conventions that keep the SVG valid in any Power BI locale:
+// - numbers are formatted with the "en-US" locale (dot decimal separator);
+// - colors use rgb(...) because "#" is not allowed unescaped in a data URI;
+// - "%" is escaped as %25 in the final SUBSTITUTE;
+// - no DAX function names or reserved words as variable names (ROWS, VALUE, LABEL...).
+// Depends on the measures in MEASURES.dax.
+
+// ---------- Page 1: Overview ----------
+
+// Image size: 512 x 236 (2 x 2 cards)
+SVG Overview KPIs =
+VAR Rev = [Total Revenue]
+VAR YoY = [Revenue YoY %]
+VAR GM = [Gross Margin %]
+VAR GMLY = [Gross Margin % LY]
+VAR Ord = [Orders]
+VAR Tkt = [Average Ticket]
+VAR YoYColor = IF ( YoY >= 0, "rgb(26,127,55)", "rgb(198,40,40)" )
+VAR YoYText = IF ( ISBLANK ( YoY ), "no prior year", FORMAT ( YoY, "+0.0%;-0.0%", "en-US" ) & " vs last year" )
+VAR GMText = IF ( ISBLANK ( GMLY ), "no prior year", FORMAT ( ( GM - GMLY ) * 100, "+0.0;-0.0", "en-US" ) & " pp vs last year" )
+VAR CardTop = "' width='250' height='110' rx='10' fill='white' stroke='rgb(225,228,232)'/>"
+VAR LabelStyle = "' font-size='12' fill='rgb(87,96,106)' letter-spacing='0.5'>"
+VAR ValueStyle = "' font-size='28' font-weight='600' fill='rgb(31,35,40)'>"
+VAR SubStyle = "' font-size='12' fill='"
+VAR Svg =
+    "<svg xmlns='http://www.w3.org/2000/svg' width='512' height='236' viewBox='0 0 512 236' font-family='Segoe UI, Arial, sans-serif'>"
+        & "<rect x='1' y='1" & CardTop
+        & "<text x='16' y='29" & LabelStyle & "REVENUE</text>"
+        & "<text x='16' y='67" & ValueStyle & FORMAT ( Rev, "$#,##0", "en-US" ) & "</text>"
+        & "<text x='16' y='93" & SubStyle & YoYColor & "'>" & YoYText & "</text>"
+        & "<rect x='261' y='1" & CardTop
+        & "<text x='276' y='29" & LabelStyle & "GROSS MARGIN</text>"
+        & "<text x='276' y='67" & ValueStyle & FORMAT ( GM, "0.0%", "en-US" ) & "</text>"
+        & "<text x='276' y='93" & SubStyle & "rgb(87,96,106)'>" & GMText & "</text>"
+        & "<rect x='1' y='125" & CardTop
+        & "<text x='16' y='153" & LabelStyle & "ORDERS</text>"
+        & "<text x='16' y='191" & ValueStyle & FORMAT ( Ord, "#,##0", "en-US" ) & "</text>"
+        & "<rect x='261' y='125" & CardTop
+        & "<text x='276' y='153" & LabelStyle & "AVERAGE TICKET</text>"
+        & "<text x='276' y='191" & ValueStyle & FORMAT ( Tkt, "$#,##0.00", "en-US" ) & "</text>"
+        & "</svg>"
+RETURN
+    "data:image/svg+xml;utf8," & SUBSTITUTE ( Svg, "%", "%25" )
+
+// Image size: 512 x 260
+SVG Monthly Revenue =
+VAR Months =
+    ADDCOLUMNS (
+        SUMMARIZE ( dim_date, dim_date[month_number], dim_date[month_name] ),
+        "@rev", [Total Revenue],
+        "@ly", [Revenue LY]
+    )
+VAR MaxV = MAXX ( Months, MAX ( [@rev], [@ly] ) )
+VAR PlotH = 170
+VAR Base = 210
+VAR Bars =
+    CONCATENATEX (
+        Months,
+        VAR GX = 30 + ( dim_date[month_number] - 1 ) * 40
+        VAR HLy = COALESCE ( DIVIDE ( [@ly], MaxV ), 0 ) * PlotH
+        VAR HRev = COALESCE ( DIVIDE ( [@rev], MaxV ), 0 ) * PlotH
+        RETURN
+            "<rect x='" & GX + 4 & "' y='" & FORMAT ( Base - HLy, "0.0", "en-US" )
+                & "' width='14' height='" & FORMAT ( HLy, "0.0", "en-US" ) & "' rx='2' fill='rgb(201,209,217)'/>"
+                & "<rect x='" & GX + 20 & "' y='" & FORMAT ( Base - HRev, "0.0", "en-US" )
+                & "' width='14' height='" & FORMAT ( HRev, "0.0", "en-US" ) & "' rx='2' fill='rgb(42,120,214)'/>"
+                & "<text x='" & GX + 19 & "' y='228' font-size='10' text-anchor='middle' fill='rgb(87,96,106)'>"
+                & dim_date[month_name] & "</text>",
+        "",
+        dim_date[month_number], ASC
+    )
+VAR Svg =
+    "<svg xmlns='http://www.w3.org/2000/svg' width='512' height='260' viewBox='0 0 512 260' font-family='Segoe UI, Arial, sans-serif'>"
+        & "<text x='0' y='18' font-size='14' font-weight='600' fill='rgb(31,35,40)'>Revenue by month vs last year</text>"
+        & "<line x1='26' y1='" & Base & "' x2='512' y2='" & Base & "' stroke='rgb(225,228,232)'/>"
+        & Bars
+        & "<rect x='0' y='244' width='10' height='10' fill='rgb(42,120,214)'/>"
+        & "<text x='16' y='253' font-size='11' fill='rgb(87,96,106)'>Selected year</text>"
+        & "<rect x='110' y='244' width='10' height='10' fill='rgb(201,209,217)'/>"
+        & "<text x='126' y='253' font-size='11' fill='rgb(87,96,106)'>Last year</text>"
+        & "</svg>"
+RETURN
+    "data:image/svg+xml;utf8," & SUBSTITUTE ( Svg, "%", "%25" )
+
+// Image size: 512 x 190
+SVG Category Margin =
+VAR Cats = ADDCOLUMNS ( VALUES ( dim_product[category] ), "@m", [Gross Margin %] )
+VAR Ranked = ADDCOLUMNS ( Cats, "@r", RANKX ( Cats, [@m], , DESC, DENSE ) )
+VAR MaxM = MAXX ( Cats, [@m] )
+VAR SvgRows =
+    CONCATENATEX (
+        Ranked,
+        VAR Y = 40 + ( [@r] - 1 ) * 30
+        VAR W = COALESCE ( DIVIDE ( [@m], MaxM ), 0 ) * 330
+        RETURN
+            "<text x='0' y='" & Y + 11 & "' font-size='12' fill='rgb(31,35,40)'>" & dim_product[category] & "</text>"
+                & "<rect x='110' y='" & Y & "' width='330' height='14' rx='4' fill='rgb(238,243,251)'/>"
+                & "<rect x='110' y='" & Y & "' width='" & FORMAT ( W, "0.0", "en-US" ) & "' height='14' rx='4' fill='rgb(42,120,214)'/>"
+                & "<text x='508' y='" & Y + 11 & "' font-size='12' text-anchor='end' fill='rgb(31,35,40)'>"
+                & FORMAT ( [@m], "0.0%", "en-US" ) & "</text>",
+        "",
+        [@r], ASC
+    )
+VAR H = 40 + COUNTROWS ( Cats ) * 30
+VAR Svg =
+    "<svg xmlns='http://www.w3.org/2000/svg' width='512' height='" & H & "' viewBox='0 0 512 " & H & "' font-family='Segoe UI, Arial, sans-serif'>"
+        & "<text x='0' y='18' font-size='14' font-weight='600' fill='rgb(31,35,40)'>Gross margin by category</text>"
+        & SvgRows & "</svg>"
+RETURN
+    "data:image/svg+xml;utf8," & SUBSTITUTE ( Svg, "%", "%25" )
+
+// ---------- Page 2: Branch & product ----------
+
+// Image size: 512 x 208
+SVG Branch Table =
+VAR B =
+    ADDCOLUMNS (
+        SUMMARIZE ( dim_branch, dim_branch[region], dim_branch[branch_name] ),
+        "@rev", [Total Revenue],
+        "@gm", [Gross Margin %],
+        "@yoy", [Revenue YoY %]
+    )
+VAR Ranked = ADDCOLUMNS ( B, "@r", RANKX ( B, [@rev], , DESC, DENSE ) )
+VAR MaxR = MAXX ( B, [@rev] )
+VAR SvgRows =
+    CONCATENATEX (
+        Ranked,
+        VAR Y = 64 + ( [@r] - 1 ) * 36
+        VAR W = COALESCE ( DIVIDE ( [@rev], MaxR ), 0 ) * 110
+        RETURN
+            "<line x1='0' y1='" & Y + 14 & "' x2='512' y2='" & Y + 14 & "' stroke='rgb(234,238,242)'/>"
+                & "<text x='0' y='" & Y & "' font-size='12' fill='rgb(87,96,106)'>" & dim_branch[region] & "</text>"
+                & "<text x='66' y='" & Y & "' font-size='12' font-weight='600' fill='rgb(31,35,40)'>" & dim_branch[branch_name] & "</text>"
+                & "<rect x='176' y='" & Y - 10 & "' width='" & FORMAT ( W, "0.0", "en-US" ) & "' height='10' rx='3' fill='rgb(42,120,214)'/>"
+                & "<text x='378' y='" & Y & "' font-size='12' text-anchor='end' fill='rgb(31,35,40)'>" & FORMAT ( [@rev], "$#,##0", "en-US" ) & "</text>"
+                & "<text x='442' y='" & Y & "' font-size='12' text-anchor='end' fill='rgb(31,35,40)'>" & FORMAT ( [@gm], "0.0%", "en-US" ) & "</text>"
+                & "<text x='508' y='" & Y & "' font-size='12' text-anchor='end' fill='"
+                & IF ( [@yoy] >= 0, "rgb(26,127,55)", "rgb(198,40,40)" ) & "'>"
+                & IF ( ISBLANK ( [@yoy] ), "n/a", FORMAT ( [@yoy], "+0.0%;-0.0%", "en-US" ) ) & "</text>",
+        "",
+        [@r], ASC
+    )
+VAR H = 64 + COUNTROWS ( B ) * 36
+VAR Head = "' y='44' font-size='10' fill='rgb(87,96,106)' letter-spacing='0.5'"
+VAR Svg =
+    "<svg xmlns='http://www.w3.org/2000/svg' width='512' height='" & H & "' viewBox='0 0 512 " & H & "' font-family='Segoe UI, Arial, sans-serif'>"
+        & "<text x='0' y='18' font-size='14' font-weight='600' fill='rgb(31,35,40)'>Branches</text>"
+        & "<text x='0" & Head & ">REGION</text><text x='66" & Head & ">BRANCH</text>"
+        & "<text x='176" & Head & ">REVENUE</text>"
+        & "<text x='442" & Head & " text-anchor='end'>MARGIN</text><text x='508" & Head & " text-anchor='end'>YOY</text>"
+        & SvgRows & "</svg>"
+RETURN
+    "data:image/svg+xml;utf8," & SUBSTITUTE ( Svg, "%", "%25" )
+
+// Image size: 512 x 266
+SVG Top Products =
+VAR P =
+    TOPN (
+        5,
+        ADDCOLUMNS (
+            SUMMARIZE ( dim_product, dim_product[product_name], dim_product[category] ),
+            "@rev", [Total Revenue],
+            "@gm", [Gross Margin %],
+            "@units", [Units Sold]
+        ),
+        [@rev], DESC
+    )
+VAR Ranked = ADDCOLUMNS ( P, "@r", RANKX ( P, [@rev], , DESC, DENSE ) )
+VAR SvgRows =
+    CONCATENATEX (
+        Ranked,
+        VAR Y = 66 + ( [@r] - 1 ) * 40
+        RETURN
+            "<line x1='0' y1='" & Y + 20 & "' x2='512' y2='" & Y + 20 & "' stroke='rgb(234,238,242)'/>"
+                & "<text x='0' y='" & Y & "' font-size='13' font-weight='600' fill='rgb(31,35,40)'>" & dim_product[product_name] & "</text>"
+                & "<text x='0' y='" & Y + 15 & "' font-size='11' fill='rgb(87,96,106)'>" & dim_product[category] & "</text>"
+                & "<text x='320' y='" & Y & "' font-size='12' text-anchor='end' fill='rgb(31,35,40)'>" & FORMAT ( [@units], "#,##0", "en-US" ) & "</text>"
+                & "<text x='426' y='" & Y & "' font-size='12' text-anchor='end' fill='rgb(31,35,40)'>" & FORMAT ( [@rev], "$#,##0", "en-US" ) & "</text>"
+                & "<text x='508' y='" & Y & "' font-size='12' text-anchor='end' fill='rgb(31,35,40)'>" & FORMAT ( [@gm], "0.0%", "en-US" ) & "</text>",
+        "",
+        [@r], ASC
+    )
+VAR H = 66 + COUNTROWS ( P ) * 40
+VAR Head = "' y='44' font-size='10' fill='rgb(87,96,106)' letter-spacing='0.5' text-anchor='end'"
+VAR Svg =
+    "<svg xmlns='http://www.w3.org/2000/svg' width='512' height='" & H & "' viewBox='0 0 512 " & H & "' font-family='Segoe UI, Arial, sans-serif'>"
+        & "<text x='0' y='18' font-size='14' font-weight='600' fill='rgb(31,35,40)'>Top 5 products by revenue</text>"
+        & "<text x='0' y='44' font-size='10' fill='rgb(87,96,106)' letter-spacing='0.5'>PRODUCT</text>"
+        & "<text x='320" & Head & ">UNITS</text><text x='426" & Head & ">REVENUE</text><text x='508" & Head & ">MARGIN</text>"
+        & SvgRows & "</svg>"
+RETURN
+    "data:image/svg+xml;utf8," & SUBSTITUTE ( Svg, "%", "%25" )
+
+// ---------- Page 3: Inventory ----------
+
+// Image size: 512 x 330
+SVG Inventory =
+VAR Soh = [Stock on Hand]
+VAR Dos = [Days of Supply]
+VAR Sr = [Stockout Rate]
+VAR M =
+    FILTER (
+        ADDCOLUMNS ( SUMMARIZE ( dim_date, dim_date[month_number] ), "@sr", [Stockout Rate] ),
+        NOT ISBLANK ( [@sr] )
+    )
+// Scale has a 10% floor so small rates are not drawn as full-height bars.
+VAR MaxS = MAX ( MAXX ( M, [@sr] ), 0.10 )
+VAR PlotH = 100
+VAR Base = 282
+VAR Bars =
+    CONCATENATEX (
+        M,
+        VAR X = ( dim_date[month_number] - 1 ) * 42
+        VAR Hb = MAX ( COALESCE ( DIVIDE ( [@sr], MaxS ), 0 ) * PlotH, 2 )
+        RETURN
+            "<rect x='" & X + 6 & "' y='" & FORMAT ( Base - Hb, "0.0", "en-US" ) & "' width='32' height='"
+                & FORMAT ( Hb, "0.0", "en-US" ) & "' rx='3' fill='"
+                & IF ( [@sr] > 0.05, "rgb(198,40,40)", "rgb(42,120,214)" ) & "'/>"
+                & "<text x='" & X + 22 & "' y='" & FORMAT ( Base - Hb - 5, "0.0", "en-US" )
+                & "' font-size='9' text-anchor='middle' fill='rgb(87,96,106)'>" & FORMAT ( [@sr], "0.0%", "en-US" ) & "</text>"
+                & "<text x='" & X + 22 & "' y='300' font-size='10' text-anchor='middle' fill='rgb(87,96,106)'>"
+                & FORMAT ( dim_date[month_number], "00", "en-US" ) & "</text>",
+        "",
+        dim_date[month_number], ASC
+    )
+VAR CardTop = "' y='1' width='162' height='90' rx='10' fill='white' stroke='rgb(225,228,232)'/>"
+VAR LabelStyle = "' y='27' font-size='11' fill='rgb(87,96,106)' letter-spacing='0.5'>"
+VAR ValueStyle = "' y='64' font-size='24' font-weight='600' fill='rgb(31,35,40)'>"
+VAR Svg =
+    "<svg xmlns='http://www.w3.org/2000/svg' width='512' height='330' viewBox='0 0 512 330' font-family='Segoe UI, Arial, sans-serif'>"
+        & "<rect x='1" & CardTop & "<text x='14" & LabelStyle & "STOCK ON HAND</text>"
+        & "<text x='14" & ValueStyle & FORMAT ( Soh, "#,##0", "en-US" ) & "</text>"
+        & "<rect x='175" & CardTop & "<text x='188" & LabelStyle & "DAYS OF SUPPLY</text>"
+        & "<text x='188" & ValueStyle & FORMAT ( Dos, "0.0", "en-US" ) & "</text>"
+        & "<rect x='349" & CardTop & "<text x='362" & LabelStyle & "STOCKOUT RATE</text>"
+        & "<text x='362" & ValueStyle & FORMAT ( Sr, "0.0%", "en-US" ) & "</text>"
+        & "<text x='0' y='126' font-size='14' font-weight='600' fill='rgb(31,35,40)'>Stockout rate by month</text>"
+        & "<line x1='0' y1='" & Base & "' x2='512' y2='" & Base & "' stroke='rgb(225,228,232)'/>"
+        & Bars
+        & "<text x='0' y='322' font-size='11' fill='rgb(87,96,106)'>Red: above 5% of month-end snapshots with zero stock</text>"
+        & "</svg>"
+RETURN
+    "data:image/svg+xml;utf8," & SUBSTITUTE ( Svg, "%", "%25" )

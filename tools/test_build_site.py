@@ -1,6 +1,7 @@
 import copy
 import json
 import re
+from html import escape
 from pathlib import Path
 
 import pytest
@@ -24,7 +25,7 @@ def test_every_case_is_rendered_with_links(data):
     for case in data["cases"]:
         assert f'id="{case["slug"]}"' in page
         assert f'{data["site"]["repo_url"]}/tree/main/{case["path"]}' in page
-        assert case["title"] in page
+        assert escape(case["title"]) in page
 
 
 def test_referenced_files_exist(data):
@@ -99,6 +100,18 @@ def test_duplicate_slug_is_rejected(tmp_path, data):
     path = tmp_path / "cases.json"
     path.write_text(json.dumps(dup), encoding="utf-8")
     with pytest.raises(ValueError, match="duplicate"):
+        build_site.load_data(path)
+
+
+def test_image_fit_is_rendered_and_validated(tmp_path, data):
+    page = build_site.render(data)
+    for case in data["cases"]:
+        assert f'class="case-media fit-{case.get("image_fit", "cover")}"' in page
+    bad = copy.deepcopy(data)
+    bad["cases"][0]["image_fit"] = "stretch"
+    path = tmp_path / "cases.json"
+    path.write_text(json.dumps(bad), encoding="utf-8")
+    with pytest.raises(ValueError, match="image_fit"):
         build_site.load_data(path)
 
 
