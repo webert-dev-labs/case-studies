@@ -30,8 +30,6 @@ automated tests and a ready-to-share result. All scenarios and data are fictitio
   </tr>
 </table>
 
-More case studies are on the way.
-
 ---
 
 ## What every case study includes

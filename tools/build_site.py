@@ -156,7 +156,6 @@ h2 { font-size: 1.4rem; letter-spacing: -.01em; margin: 0 0 24px; }
 .btn-primary:hover { filter: brightness(1.08); }
 .btn-secondary { border-color: var(--line); background: var(--surface); }
 .btn-secondary:hover { border-color: var(--muted); }
-.more { color: var(--muted); text-align: center; margin: 8px 0 0; }
 .pillars { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
 .pillar { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 18px; }
 .pillar h3 { font-size: 1rem; margin: 0 0 6px; }
@@ -198,8 +197,6 @@ def render(data: dict) -> str:
     pillars = "".join(
         f'<div class="pillar"><h3>{escape(t)}</h3><p>{escape(d)}</p></div>' for t, d in PILLARS
     )
-    count = len(cases)
-    count_label = f"{count} case stud{'y' if count == 1 else 'ies'}"
     return f"""<!doctype html>
 <html lang="en">
 <head>
@@ -234,14 +231,13 @@ def render(data: dict) -> str:
 <main>
   <div class="wrap">
     <section class="hero">
-      <p class="eyebrow">{escape(site['title'])} · {escape(count_label)}</p>
+      <p class="eyebrow">{escape(site['title'])}</p>
       <h1>{escape(site['tagline'])}</h1>
       <p class="lead">{escape(site['intro'])}</p>
     </section>
 
     <section id="cases" aria-label="Case studies">
       {case_html}
-      <p class="more">More case studies are on the way.</p>
     </section>
 
     <section aria-labelledby="pillars-title">

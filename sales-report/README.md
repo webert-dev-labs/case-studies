@@ -29,7 +29,7 @@ one command:
 
 - The full report is rebuilt in about a second from any CSV with the same columns.
 - Identical input always produces identical numbers, so the report can be trusted and audited.
-- 17 automated tests cover data generation, metrics, the HTML output and the CLI.
+- 19 automated tests cover data generation, metrics, the HTML output and the CLI.
 
 ## How to run
 

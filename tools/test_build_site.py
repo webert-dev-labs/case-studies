@@ -75,15 +75,12 @@ def test_published_images_carry_no_text_metadata():
         assert b"tEXt" not in data and b"iTXt" not in data and b"eXIf" not in data, png
 
 
-def test_case_count_label(data):
-    one = copy.deepcopy(data)
-    one["cases"] = one["cases"][:1]
-    assert "1 case study" in build_site.render(one)
-    two = copy.deepcopy(data)
-    second = copy.deepcopy(two["cases"][0])
-    second["slug"] = "other"
-    two["cases"].append(second)
-    assert "2 case studies" in build_site.render(two)
+def test_page_does_not_advertise_case_count(data):
+    # A visible count or a "more coming" line makes a small portfolio look unfinished.
+    page = build_site.render(data)
+    assert "case study ·" not in page.lower() and "1 case study" not in page
+    assert "on the way" not in page
+    assert page.count('class="case"') == len(data["cases"])
 
 
 @pytest.mark.parametrize("field", ["title", "problem", "image"])
