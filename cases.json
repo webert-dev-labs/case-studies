@@ -44,9 +44,8 @@
         {"value": "20", "label": "DAX measures"}
       ],
       "stack": ["Power BI", "DAX", "Power Query", "Python"],
-      "image": "public/sales-dashboard-overview.png",
-      "image_fit": "contain",
-      "image_alt": "Power BI overview page with KPI cards, monthly revenue vs last year and margin by category",
+      "image": "public/sales-dashboard-cover.png",
+      "image_alt": "The three Power BI report pages: sales overview, branches and products, and inventory",
       "path": "sales-dashboard"
     }
   ]
